@@ -13,7 +13,7 @@ function setChecked($formdata, $fieldName, $fieldValue) {
         else if ($formdata[$fieldName] == $fieldValue){
             echo 'checked = "checked"';
         }
-    }
+    }   
 }
 if(!isset($formdata)) {
     $formdata = array();
@@ -64,6 +64,7 @@ and open the template in the editor.
                 color: red;
             }
         </style>
+        <script src="validate.js"></script>
     </head>
 
     <body>
@@ -175,7 +176,7 @@ and open the template in the editor.
                 <div class="row">
                     <div class="label"></div>
                     <div class="control">
-                        <input type="submit" name="submit" value="Submit" />
+                        <input type="submit" name="submit" value="Submit" id="submit" />
                     </div>
                 </div>
             </div>
