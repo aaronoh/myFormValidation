@@ -44,10 +44,10 @@
         </div>
         <div class="row">
             <div class="label">
-                <label>Password</label>
+                <label>Name</label>
             </div>
             <div class="control">
-                <?php echo $formdata['password']; ?>
+                <?php echo $formdata['name']; ?>
             </div>
         </div>
         <div class="row">
@@ -60,10 +60,10 @@
         </div>
         <div class="row">
             <div class="label">
-                <label>Date of birth</label>
+                <label>Opening Date</label>
             </div>
             <div class="control">
-                <?php echo $formdata['dob']; ?>
+                <?php echo $formdata['opdate']; ?>
             </div>
         </div>
         <div class="row">

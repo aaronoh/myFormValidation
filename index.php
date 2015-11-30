@@ -87,14 +87,14 @@ and open the template in the editor.
 
                 <div class="row">
                     <div class="label">
-                        <label for="password">Password: </label>
+                        <label for="address">Address: </label>
                     </div>
                     <div class="control">
-                        <input type="password" name="password" id="password" />
+                        <input type="address" name="address" id="address" />
                     </div>
                     <div class="error">
-                        <span id="passwordError">
-                            <?php if(isset($errors['password'])) echo $errors['password']; ?>
+                        <span id="addressError">
+                            <?php if(isset($errors['address'])) echo $errors['address']; ?>
                         </span>
                     </div>
                 </div>
@@ -114,14 +114,14 @@ and open the template in the editor.
                 </div>
                 <div class="row">
                     <div class="label">
-                        <label for="dob"> Date of Birth: (dd/mm/yyyy) </label>
+                        <label for="opdate"> Opening Date: (dd/mm/yyyy) </label>
                     </div>
                     <div class="control">
-                        <input type="date" name="dob" id="dob" value="<?php setValue ($formdata, 'dob'); ?>" />
+                        <input type="date" name="opdate" id="opdate" value="<?php setValue ($formdata, 'opdate'); ?>" />
                     </div>
                     <div class="error">
-                        <span id="dobError">
-                                   <?php if(isset($errors['dob'])) echo $errors['dob']; ?>
+                        <span id="opdateError">
+                                   <?php if(isset($errors['opdate'])) echo $errors['opdate']; ?>
                                </span>
                     </div>
                 </div>

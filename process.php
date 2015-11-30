@@ -5,9 +5,9 @@
             $errors = array();
             
             $formdata["name"] = filter_input( $input_method, "name", FILTER_SANITIZE_STRING);
-            $formdata["password"] = filter_input( $input_method, "password", FILTER_SANITIZE_STRING);
+            $formdata["address"] = filter_input( $input_method, "address", FILTER_SANITIZE_STRING);
             $formdata["email"] = filter_input( $input_method, "email", FILTER_SANITIZE_EMAIL);
-            $formdata["dob"] = filter_input( $input_method, "dob", FILTER_SANITIZE_STRING);
+            $formdata["opdate"] = filter_input( $input_method, "opdate", FILTER_SANITIZE_STRING);
             $formdata["newsletter"] = filter_input( $input_method, "newsletter", FILTER_SANITIZE_STRING);
             $formdata["platform"] = filter_input( $input_method, "platform", FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
             $formdata["avatar"] = filter_input( $input_method, "avatar", FILTER_SANITIZE_STRING);
@@ -16,14 +16,14 @@
                 $errors['name'] = "Name Required";
             }
             
-            if($formdata ['password'] === NULL || $formdata ['password'] === FALSE || $formdata ['password'] === ""){
-                $errors['password'] = "Password Required";
+            if($formdata ['address'] === NULL || $formdata ['address'] === FALSE || $formdata ['address'] === ""){
+                $errors['address'] = "address Required";
             }
             
-            if($formdata ['dob'] !== NULL && $formdata ['dob'] !== FALSE && $formdata ['dob'] !== ""){
-                $date_array = explode('/', $formdata['dob']);
+            if($formdata ['opdate'] !== NULL && $formdata ['opdate'] !== FALSE && $formdata ['opdate'] !== ""){
+                $date_array = explode('/', $formdata['opdate']);
                 if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[0], $date_array[2])){
-                       $errors['dob'] = "Invalid Date Format: dd/mm/yyyy expected.";
+                       $errors['opdate'] = "Invalid Date Format: dd/mm/yyyy expected.";
                 }
             }
             
