@@ -2,17 +2,17 @@
 
 class GarageTableGateway {
 
-    private $connection;
+    private $dbconnection;
 
     public function __construct($con) {
-        $this->connection = $con;
+        $this->dbconnection = $con;
     }
 
     public function getGarage() {
         // execute  query to get all garages
         $sqlQuery = "SELECT * FROM garage";
 
-        $statement = $this->connection->prepare($sqlQuery);
+        $statement = $this->dbconnection->prepare($sqlQuery);
         $status = $statement->execute();
 
         if (!$status) {
@@ -26,7 +26,7 @@ class GarageTableGateway {
         // execute  query to get bus with the requested id
         $sqlQuery = "SELECT * FROM garage WHERE garageid = :id";
 
-        $statement = $this->connection->prepare($sqlQuery);
+        $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
             "garageid" => $id
         );
@@ -45,7 +45,7 @@ class GarageTableGateway {
                 "(name, address, email, phone, openingdate, openinghours, managername) " .
                 "VALUES (:name, :address, :email, :phone, :openingdate, :openinghours, :managername)";
 
-        $statement = $this->connection->prepare($sqlQuery);
+        $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
             "name" => $nm,
             "address" => $ad,
@@ -62,14 +62,14 @@ class GarageTableGateway {
             die("Could not execute query (CREATE)");
         }
 
-        $id = $this->connection->lastInsertId();
+        $id = $this->dbconnection->lastInsertId();
         return $id;
     }
 
     public function deleteGarage($id) {
         $sqlQuery = "DELETE FROM garage WHERE garageid = :id";
 
-        $statement = $this->connection->prepare($sqlQuery);
+        $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
             
             "garageid" => $id
@@ -96,7 +96,7 @@ class GarageTableGateway {
                 "managername = :managername, " .
                 "WHERE garageid = :id";
 
-        $statement = $this->connection->prepare($sqlQuery);
+        $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
             "name" => $nm,
             "address" => $ad,
