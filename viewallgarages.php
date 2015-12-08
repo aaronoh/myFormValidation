@@ -11,7 +11,6 @@ require_once 'dbconnection.php';
 require_once 'garagesTableGateway.php';
 
 
-
 $dbconnection = dbconnection::getConnection();
 $gateway = new garageTableGateway($dbconnection);
 
@@ -51,11 +50,17 @@ $statement = $gateway->getGarage();
                     echo '<td>' . $row['openingdate'] . '</td>';
                     echo '<td>' . $row['openinghours'] . '</td>';
                     echo '<td>' . $row['managername'] . '</td>';
+                    echo '<td>'
+                    .'<a href="viewGarage.php?id=' .$row['GarageID'].'">View</a>'
+                    .'<a href="editGarageForm.php?id=' .$row['GarageID'].'">Edit</a>'
+                    .'<a href="deleteGarage.php?id=' .$row['GarageID'].'">Delete</a>'
+                    .'</td>';
                     echo '</tr>';
                     
                     $row = $statement->fetch(PDO::FETCH_ASSOC);
                 }
                 ?>
         </table>
+        <p><a href ="addGarageForm.php">Add Bus</a></p>
     </body>
 </html>
