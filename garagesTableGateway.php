@@ -24,17 +24,17 @@ class GarageTableGateway {
 
     public function getGarageById($id) {
         // execute  query to get bus with the requested id
-        $sqlQuery = "SELECT * FROM garage WHERE garageid = :id";
+        $sqlQuery = "SELECT * FROM garage WHERE GarageID = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
-            "garageid" => $id
+            "id" => $id
         );
 
         $status = $statement->execute($params);
 
         if (!$status) {
-            die("Could not execute query (VIEWBYID)");
+            die("Could not find garage");
         }
 
         return $statement;
