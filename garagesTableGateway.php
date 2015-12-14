@@ -24,7 +24,7 @@ class GarageTableGateway {
 
     public function getGarageById($id) {
         // execute  query to get bus with the requested id
-        $sqlQuery = "SELECT * FROM garage WHERE GarageID = :id";
+        $sqlQuery = "SELECT * FROM garage WHERE id = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
@@ -67,12 +67,12 @@ class GarageTableGateway {
     }
 
     public function deleteGarage($id) {
-        $sqlQuery = "DELETE FROM garage WHERE garageid = :id";
+        $sqlQuery = "DELETE FROM garage WHERE id = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
             
-            "garageid" => $id
+            "id" => $id
         );
 
         $status = $statement->execute($params);

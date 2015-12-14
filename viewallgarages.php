@@ -51,9 +51,9 @@ $statement = $gateway->getGarage();
                     echo '<td>' . $row['openinghours'] . '</td>';
                     echo '<td>' . $row['managername'] . '</td>';
                     echo '<td>'
-                    .'<a href="viewGarages.php?id=' .$row['GarageID'].'">View</a>'
-                    .'<a href="editGarageForm.php?id=' .$row['GarageID'].'">Edit</a>'
-                    .'<a href="deleteGarage.php?id=' .$row['GarageID'].'">Delete</a>'
+                    .'<a href="viewGarages.php?id=' .$row['id'].'">View</a>'
+                    .'<a href="editGarageForm.php?id=' .$row['id'].'">Edit</a>'
+                    .'<a href="deleteGarage.php?id=' .$row['id'].'">Delete</a>'
                     .'</td>';
                     echo '</tr>';
                     
