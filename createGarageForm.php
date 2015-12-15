@@ -68,6 +68,7 @@ and open the template in the editor.
     </head>
 
     <body>
+        <h1>Create Garage Form</h1>
         <form action="process.php" method="post">
             <div class="container">
                 <div class="row">
