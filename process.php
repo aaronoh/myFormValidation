@@ -64,7 +64,7 @@
            }
            else{
                
-               require 'index.php';
+               require 'createGarageForm.php';
            }
         ?>
             

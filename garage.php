@@ -7,6 +7,7 @@
  */
 
 class Garage {
+    private $id;
     private $name;
     private $address;
     private $email;
@@ -15,7 +16,9 @@ class Garage {
     private $openinghours;
     private $managername;
     
-    public function __construct($nm, $ad, $em, $ph, $op, $hrs, $mnm) {
+    public function __construct($id, $nm, $ad, $em, $ph, $op, $hrs, $mnm) {
+        
+        $this->id = $id;
         $this->name = $nm;
         $this->address = $ad;
         $this->email = $em;
@@ -25,6 +28,7 @@ class Garage {
         $this->managername = $mnm;
     }
     
+    public function getId() { return $this->id; }
     public function getName() { return $this->name; }
     public function getAddress() { return $this->address; }
     public function getEmail() { return $this->email; }

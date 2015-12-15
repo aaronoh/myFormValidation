@@ -1,4 +1,6 @@
 <?php
+require_once 'process.php';
+
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
         echo $formdata[$fieldName];
@@ -69,7 +71,7 @@ and open the template in the editor.
 
     <body>
         <h1>Create Garage Form</h1>
-        <form action="process.php" method="post">
+        <form action="process.php" method="POST">
             <div class="container">
                 <div class="row">
                     <div class="label">
@@ -145,7 +147,7 @@ and open the template in the editor.
                 </div>
                    <div class="row">
                     <div class="label">
-                        <label for="phone"> Opening Hours: </label>
+                        <label for="ophrs"> Opening Hours: </label>
                     </div>
                     <div class="control">
                         <input type="text" name="ophrs" id="ophrs" value="<?php setValue ($formdata, 'ophrs'); ?>" />

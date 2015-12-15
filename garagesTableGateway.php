@@ -40,26 +40,26 @@ class GarageTableGateway {
         return $statement;
     }
 
-    public function insertBus($nm, $ad, $em, $ph, $op, $hrs, $mnm) {
+    public function insertGarage($g) {
         $sqlQuery = "INSERT INTO garage " .
                 "(name, address, email, phone, openingdate, openinghours, managername) " .
                 "VALUES (:name, :address, :email, :phone, :openingdate, :openinghours, :managername)";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
-            "name" => $nm,
-            "address" => $ad,
-            "email" => $em,
-            "phone" => $ph,
-            "openingdate" => $op,
-            "openinghours" => $hrs,
-            "managername" => $mnm
+            "name" => $g->getName(),
+            "address" => $g->getAddress(),
+            "email" => $g->getEmail(),
+            "phone" => $g->getPhone(),
+            "openingdate" => $g->getOpeningDate(),
+            "openinghours" => $g->getOpeningHours(),
+            "managername" => $g->getManagerName(),
         );
 
         $status = $statement->execute($params);
 
         if (!$status) {
-            die("Could not execute query (CREATE)");
+            die("Could not add garage");
         }
 
         $id = $this->dbconnection->lastInsertId();
