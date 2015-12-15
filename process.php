@@ -59,12 +59,12 @@
           
          
            if(empty($errors)){
-               require 'response.php';
+               require 'createGarage.php';
                
            }
            else{
-               
-               require 'createGarageForm.php';
+               echo '<pre>'; print_r($errors); echo '</pre>';
+               //require 'viewallgarages.php';
            }
         ?>
             
