@@ -1,29 +1,29 @@
 <?php
-require_once 'process.php';
-
-function setValue($formdata, $fieldName) {
-    if (isset($formdata) && isset($formdata[$fieldName])) {
-        echo $formdata[$fieldName];
-    }
-}
-
-function setChecked($formdata, $fieldName, $fieldValue) {
-    if (isset($formdata[$fieldName]) && isset($formdata[$fieldName])) {
-        if (is_array($formdata[$fieldName]) && in_array($fieldValue, $formdata[$fieldName])){
-            echo 'checked = "checked"';
-        }
-        else if ($formdata[$fieldName] == $fieldValue){
-            echo 'checked = "checked"';
-        }
-    }   
-}
-if(!isset($formdata)) {
-    $formdata = array();
-}
-
-if(!isset($errors)) {
-    $errors = array();
-}
+//require_once 'process.php';
+//
+//function setValue($formdata, $fieldName) {
+//    if (isset($formdata) && isset($formdata[$fieldName])) {
+//        echo $formdata[$fieldName];
+//    }
+//}
+//
+//function setChecked($formdata, $fieldName, $fieldValue) {
+//    if (isset($formdata[$fieldName]) && isset($formdata[$fieldName])) {
+//        if (is_array($formdata[$fieldName]) && in_array($fieldValue, $formdata[$fieldName])){
+//            echo 'checked = "checked"';
+//        }
+//        else if ($formdata[$fieldName] == $fieldValue){
+//            echo 'checked = "checked"';
+//        }
+//    }   
+//}
+//if(!isset($formdata)) {
+//    $formdata = array();
+//}
+//
+//if(!isset($errors)) {
+//    $errors = array();
+//}
 ?>
     <!DOCTYPE html>
     <!--
@@ -71,7 +71,7 @@ and open the template in the editor.
 
     <body>
         <h1>Create Garage Form</h1>
-        <form action="process.php" method="POST">
+        <form action="process.php" method="post">
             <div class="container">
                 <div class="row">
                     <div class="label">

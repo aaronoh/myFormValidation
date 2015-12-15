@@ -78,36 +78,9 @@ class GarageTableGateway {
         $status = $statement->execute($params);
 
         if (!$status) {
-            die("execute query (DELETE)");
+            die("Failed to delete");
         }
 
-        return ($statement->rowCount() == 1);
-    }
-
-    public function updateGarage($nm, $ad, $em, $ph, $op, $hrs, $mnm) {
-        $sqlQuery =
-                "UPDATE garage SET " .
-                "name = :name, " .
-                "address = :address, " .
-                "email = :email, " .
-                "phone = :phone, " .
-                "openingdate = :openingdate, " .
-                "openinghours = :openinghours " .
-                "managername = :managername, " .
-                "WHERE garageid = :id";
-
-        $statement = $this->dbconnection->prepare($sqlQuery);
-        $params = array(
-            "name" => $nm,
-            "address" => $ad,
-            "email" => $em,
-            "phone" => $ph,
-            "openingdate" => $op,
-            "openinghours" => $hrs,
-            "managername" => $mnm,
-        );
-
-        $status = $statement->execute($params);
         return ($statement->rowCount() == 1);
     }
 }
