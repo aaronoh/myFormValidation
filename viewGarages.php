@@ -50,7 +50,6 @@ die("Illegal Request");
                 echo '<td>' . $row['openinghours'] . '</td>';
                 echo '<td>' . $row['managername'] . '</td>';
                 echo '<td>'
-                .'<a href="editGarageForm.php?id=' .$row['id'].'">Edit</a>'
                 .'<a href="deleteGarage.php?id=' .$row['id'].'">Delete</a>'
                 .'</td>';
                 echo '</tr>';

@@ -2,6 +2,7 @@
 require_once 'garage.php';
 require_once 'garagesTableGateway.php';
 require_once 'dbconnection.php';
+require_once 'process.php';
 
 $name = $_POST['name'];
 $mname = $_POST['mname'];
@@ -11,7 +12,7 @@ $phone = $_POST['phone'];
 $ophrs = $_POST['ophrs'];
 $opdate = $_POST['opdate'];
 
-$garage = new Garage(-1, $name, $mname, $address, $email, $phone, $ophrs, $opdate);
+$garage = new Garage(-1, $name, $address, $email, $phone, $opdate, $ophrs, $mname );
 
 $dbconnection = dbconnection::getConnection();
 

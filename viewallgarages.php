@@ -63,6 +63,6 @@ $statement = $gateway->getGarage();
                 }
                 ?>
         </table>
-        <p><a href ="createGarageForm.php">Add Bus</a></p>
+        <p><a href ="createGarageForm.php">Add Garage</a></p>
     </body>
 </html>

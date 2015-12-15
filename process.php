@@ -27,9 +27,9 @@
             }
             
             if($formdata ['opdate'] !== NULL && $formdata ['opdate'] !== FALSE && $formdata ['opdate'] !== ""){
-                $date_array = explode('/', $formdata['opdate']);
-                if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[0], $date_array[2])){
-                       $errors['opdate'] = "Invalid Date Format: dd/mm/yyyy expected.";
+                $date_array = explode('-', $formdata['opdate']);
+                if (count($date_array) !== 3 || !checkdate($date_array[2], $date_array[1], $date_array[0])){
+                       $errors['opdate'] = "Invalid Date Format: yyyy-dd-mm expectedxx.";
                 }
             }
             
@@ -59,12 +59,12 @@
           
          
            if(empty($errors)){
-               require 'createGarage.php';
+               require 'response.php';
                
            }
            else{
                echo '<pre>'; print_r($errors); echo '</pre>';
-               //require 'viewallgarages.php';
+               require 'viewallgarages.php';
            }
         ?>
             

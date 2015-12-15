@@ -1,5 +1,4 @@
 <?php
-require_once 'process.php';
 
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
