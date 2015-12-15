@@ -84,13 +84,29 @@ and open the template in the editor.
                         </span>
                     </div>
                 </div>
+                
+                  <div class="container">
+                <div class="row">
+                    <div class="label">
+                        <label for="name">Manager Name: </label>
+                    </div>
+                    <div class="control">
+                        <input type="text" name="mname" id="mname" value="<?php setValue ($formdata, 'mname'); ?>" />
+                    </div>
+                    <div class="error">
+                        <span id="mnameError">
+                            <?php if(isset($errors['mname'])) echo $errors['mname']; ?>
+                            
+                        </span>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="label">
                         <label for="address">Address: </label>
                     </div>
                     <div class="control">
-                        <input type="address" name="address" id="address" />
+                        <input type="text" name="address" id="address" value="<?php setValue ($formdata, 'address'); ?>" />
                     </div>
                     <div class="error">
                         <span id="addressError">
@@ -112,6 +128,33 @@ and open the template in the editor.
                             </span>
                     </div>
                 </div>
+                
+                  <div class="row">
+                    <div class="label">
+                        <label for="phone"> Phone: </label>
+                    </div>
+                    <div class="control">
+                        <input type="text" name="phone" id="phone" value="<?php setValue ($formdata, 'phone'); ?>" />
+                    </div>
+                    <div class="error">
+                        <span id="phoneError">
+                                <?php if(isset($errors['phone'])) echo $errors['phone']; ?>
+                            </span>
+                    </div>
+                </div>
+                   <div class="row">
+                    <div class="label">
+                        <label for="phone"> Opening Hours: </label>
+                    </div>
+                    <div class="control">
+                        <input type="text" name="ophrs" id="ophrs" value="<?php setValue ($formdata, 'ophrs'); ?>" />
+                    </div>
+                    <div class="error">
+                        <span id="ophrsError">
+                                <?php if(isset($errors['ophrs'])) echo $errors['ophrs']; ?>
+                            </span>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="label">
                         <label for="opdate"> Opening Date: (dd/mm/yyyy) </label>
@@ -128,48 +171,46 @@ and open the template in the editor.
 
                 <div class="row">
                     <div class="label">
-                        <label> Platform: </label>
+                        <label> Facilities: </label>
                     </div>
-                    <input type="checkbox" name="platform[]" value="Steam" id="Steam" <?php setChecked($formdata, 'platform', 'Steam') ?> />
-                    <label for="Steam">Steam</label>
-                    <input type="checkbox" name="platform[]" value="PSN" id="PSN" <?php setChecked($formdata, 'platform', 'PSN') ?> />
-                    <label for="PSN">PSN</label>
-                    <input type="checkbox" name="platform[]" value="Android" id="Android" <?php setChecked($formdata, 'platform', 'Android') ?> />
-                    <label for="Android">Android</label>
-                    <input type="checkbox" name="platform[]" value="iOS" id="iOS" <?php setChecked($formdata, 'platform', 'iOS') ?> />
-                    <label for="iOS">iOS</label>
+                    <input type="checkbox" name="facilities[]" value="WiFi" id="Steam" <?php setChecked($formdata, 'facilities', 'WiFi') ?> />
+                    <label for="Steam">WiFi</label>
+                    <input type="checkbox" name="facilities[]" value="toilets" id="toilets" <?php setChecked($formdata, 'facilities', 'toilets') ?> />
+                    <label for="toilets">Toilets</label>
+                    <input type="checkbox" name="facilities[]" value="cafeteria" id="Android" <?php setChecked($formdata, 'facilities', 'cafeteria') ?> />
+                    <label for="cafeteria">Cafeteria</label>
 
                     <div class="error">
                         <span id="platformError">
-                            <?php if(isset($errors['platform'])) echo $errors['platform']; ?>
+                            <?php if(isset($errors['facilities'])) echo $errors['facilities']; ?>
                         </span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="label">
-                        <label> Newsletter? </label>
+                        <label>LateNight?  </label>
                     </div>
-                    <input type="radio" name="newsletter" value="Yes" id="Yes" <?php setChecked($formdata, 'newsletter', 'Yes') ?> />
+                    <input type="radio" name="latenight" value="Yes" id="Yes" <?php setChecked($formdata, 'latenight', 'Yes') ?> />
                     <label for="Yes"> Yes</label>
-                    <input type="radio" name="newsletter" value="No" id="No" <?php setChecked($formdata, 'newsletter', 'No') ?> />
+                    <input type="radio" name="latenight" value="No" id="No" <?php setChecked($formdata, 'latenight', 'No') ?> />
                     <label for="No"> No</label>
                     <div class="error">
-                        <span id="newsletterError">
-                            <?php if(isset($errors['newsletter'])) echo $errors['newsletter']; ?>
+                        <span id="latenight">
+                            <?php if(isset($errors['latenight'])) echo $errors['latenight']; ?>
                         </span>
                     </div>
                 </div>
-                <div class="row">
+<!--                <div class="row">
                     <div class="label">
-                        <label for="avatar"> Avatar: </label>
+                        <label for="image"> Image: </label>
                     </div>
-                    <input type="file" id="avatar" name="avatar" />
+                    <input type="file" id="image" name="image" />
                     <div class="error">
-                        <span id="avatarError">
-                                <?php if(isset($errors['avatar'])) echo $errors['avatar']; ?>
+                        <span id="imageError">
+                                <?php if(isset($errors['image'])) echo $errors['image']; ?>
                             </span>
                     </div>
-                </div>
+                </div>-->
 
 
 

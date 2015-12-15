@@ -44,10 +44,18 @@
         </div>
         <div class="row">
             <div class="label">
-                <label>Name</label>
+                <label>Manager Name</label>
             </div>
             <div class="control">
-                <?php echo $formdata['name']; ?>
+                <?php echo $formdata['mname']; ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="label">
+                <label>Address</label>
+            </div>
+            <div class="control">
+                <?php echo $formdata['address']; ?>
             </div>
         </div>
         <div class="row">
@@ -58,6 +66,23 @@
                 <?php echo $formdata['email']; ?>
             </div>
         </div>
+               <div class="row">
+            <div class="label">
+                <label>Phone</label>
+            </div>
+            <div class="control">
+                <?php echo $formdata['phone']; ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="label">
+                <label>Opening Hours</label>
+            </div>
+            <div class="control">
+                <?php echo $formdata['ophrs']; ?>
+            </div>
+        </div>
+        
         <div class="row">
             <div class="label">
                 <label>Opening Date</label>
@@ -73,9 +98,9 @@
         </div>
         <div class="control">
             <?php
-                    if ($formdata['platform'] != NULL) {
-						foreach ($formdata['platform'] as $platform) {//as
-							echo $platform . ' ' ;
+                    if ($formdata['facilities'] != NULL) {
+						foreach ($formdata['facilities'] as $facilities) {//as
+							echo $facilities . ' ' ;
 						}
 					}
                     ?>
@@ -83,10 +108,10 @@
 
         <div class="row">
             <div class="label">
-                <label>Newsletter? </label>
+                <label>LateNight? </label>
             </div>
             <div class="control">
-                <?php echo $formdata['newsletter']; ?>
+                <?php echo $formdata['latenight']; ?>
             </div>
         </div>
 
