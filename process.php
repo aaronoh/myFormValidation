@@ -1,5 +1,4 @@
             <?php
-            print_r($_POST);
             $input_method = INPUT_POST;
             $formdata = array();
             $errors = array();
@@ -8,12 +7,11 @@
             $formdata["mname"] = filter_input( $input_method, "mname", FILTER_SANITIZE_STRING);
             $formdata["address"] = filter_input( $input_method, "address", FILTER_SANITIZE_STRING);
             $formdata["email"] = filter_input( $input_method, "email", FILTER_SANITIZE_EMAIL);
-            $formdata["phone"] = filter_input( $input_method, "phone", FILTER_SANITIZE_EMAIL);
+            $formdata["phone"] = filter_input( $input_method, "phone", FILTER_SANITIZE_STRING);
             $formdata["opdate"] = filter_input( $input_method, "opdate", FILTER_SANITIZE_STRING);
             $formdata["ophrs"] = filter_input( $input_method, "ophrs", FILTER_SANITIZE_STRING);
             $formdata["latenight"] = filter_input( $input_method, "latenight", FILTER_SANITIZE_STRING);
             $formdata["facilities"] = filter_input( $input_method, "facilities", FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
-            $formdata["avatar"] = filter_input( $input_method, "avatar", FILTER_SANITIZE_STRING);
             
             if($formdata ['name'] === NULL || $formdata ['name'] === FALSE || $formdata ['name'] === ""){
                 $errors['name'] = "Name Required";
@@ -28,8 +26,9 @@
             
             if($formdata ['opdate'] !== NULL && $formdata ['opdate'] !== FALSE && $formdata ['opdate'] !== ""){
                 $date_array = explode('-', $formdata['opdate']);
-                if (count($date_array) !== 3 || !checkdate($date_array[2], $date_array[1], $date_array[0])){
-                       $errors['opdate'] = "Invalid Date Format: yyyy-dd-mm expectedxx.";
+                if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[2], $date_array[0])) {
+                       $errors['opdate'] = "Invalid Date Format: YYYY/MM/DD expected.";
+                        print_r($date_array);
                 }
             }
             
@@ -63,8 +62,7 @@
                
            }
            else{
-               echo '<pre>'; print_r($errors); echo '</pre>';
-               require 'viewallgarages.php';
+               require 'createGarageForm.php';
            }
         ?>
             

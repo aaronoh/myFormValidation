@@ -159,10 +159,10 @@ and open the template in the editor.
                 </div>
                 <div class="row">
                     <div class="label">
-                        <label for="opdate"> Opening Date: (dd/mm/yyyy) </label>
+                        <label for="opdate"> Opening Date: (YYYY/MM/DD) </label>
                     </div>
                     <div class="control">
-                        <input type="date" name="opdate" id="opdate" value="<?php setValue ($formdata, 'opdate'); ?>" />
+                        <input type="text" name="opdate" id="opdate" value="<?php setValue ($formdata, 'opdate'); ?>" />
                     </div>
                     <div class="error">
                         <span id="opdateError">
