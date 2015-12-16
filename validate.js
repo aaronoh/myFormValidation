@@ -1,4 +1,33 @@
 window.onload = function() {
+    
+    function isValidDateFormat(date){
+        var re = /^\d{4}\-\d{2}\-\d{2}$/;
+        return re.test(date);
+    }
+    
+    function isDate(date){
+        var parts = date.split("-");
+        var day = parseInt(parts[2], 10);
+        var month = parseInt (parts[1], 10);
+        var year = parseInt (parts[0], 10)
+        
+        var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    
+        if (year % 400 === 0 || (year % 100 !=0 && year %4 ===0)){
+            monthLength[1] = 29;
+        }
+        
+        return(year >= 1999 && year <= 2150 
+               && month >= 1 && month <= 12 && 
+               day >= 1 && day <= monthLength[month - 1]);
+    
+    }
+    
+    function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
     var submitBtn = document.getElementById('submit');
     
     submitBtn.addEventListener("click", function (event){
@@ -36,6 +65,7 @@ window.onload = function() {
         var facilitiesField = document.getElementsByName('facilities[]');
         var latenightField = document.getElementsByName('latenight');
         
+        //set variables to value of user input 
         var name = nameField.value;
         var mname = managerNameField.value;
         var address = addressField.value;
@@ -46,6 +76,7 @@ window.onload = function() {
         var facilities = facilitiesField.value;
         var latenight = latenightField.value;
         
+        //name, manager name and address are required
         if (name === ""){
             nameErrorElement.innerHTML = "Name cannot be blank";
             valid = false;
@@ -61,7 +92,21 @@ window.onload = function() {
             valid = false;
         }
         
+        if (opdate !== "" && !isValidDateFormat(opdate)){
+        opdateErrorElement.innerHTML = "Opening date must be in the format YYYY-MM-DD";
+        valid = false; 
+    }
+        else if (opdate != "" && !isDate(opdate)){
+            opdateErrorElement.innerHTML = "Please enter a valid date";
+            valid = false;
+        }
         
+        if(email != "" && !validateEmail(email)){
+            emailErrorElement.innerHTML = "Please enter a valid email";
+            valid = false;
+        }
+        
+        //if not valid don't submit form 
         if(!valid){
             event.preventDefault();
         }
