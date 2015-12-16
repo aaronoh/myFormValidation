@@ -183,7 +183,7 @@ and open the template in the editor.
                     <label for="cafeteria">Cafeteria</label>
 
                     <div class="error">
-                        <span id="platformError">
+                        <span id="facilitiesError">
                             <?php if(isset($errors['facilities'])) echo $errors['facilities']; ?>
                         </span>
                     </div>
@@ -197,7 +197,7 @@ and open the template in the editor.
                     <input type="radio" name="latenight" value="No" id="No" <?php setChecked($formdata, 'latenight', 'No') ?> />
                     <label for="No"> No</label>
                     <div class="error">
-                        <span id="latenight">
+                        <span id="latenightError">
                             <?php if(isset($errors['latenight'])) echo $errors['latenight']; ?>
                         </span>
                     </div>
