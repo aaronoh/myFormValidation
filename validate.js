@@ -101,9 +101,22 @@ window.onload = function() {
             valid = false;
         }
         
-        if(email != "" && !validateEmail(email)){
+        if(email !== "" && !validateEmail(email)){
             emailErrorElement.innerHTML = "Please enter a valid email";
             valid = false;
+        }
+        
+        var latenightselected = false;
+        for(var i =0; i!==latenight.length; i++){
+            if(latenight[i].checked){
+                latenightselected = true;
+                break;
+            }
+        }
+        
+        if(!latenightselected){
+            latenightErrorElement.innerHTML = "Choose an option";
+            valid = false;  
         }
         
         //if not valid don't submit form 

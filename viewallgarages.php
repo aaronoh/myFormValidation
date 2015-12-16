@@ -24,7 +24,7 @@ $statement = $gateway->getGarage();
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="tablestyle.css">
-    </script>
+        <script src="deleteConfirm.js"></script>
     </head>
     <body>
       
@@ -55,7 +55,7 @@ $statement = $gateway->getGarage();
                     .'<a href="viewGarages.php?id=' .$row['id'].'">View</a>'
                     .'</td>';
                     echo '<td>'  
-                    .'<a href="deleteGarage.php?id=' .$row['id'].'">Delete</a>'
+                    .'<a class="delete_btn" href="deleteGarage.php?id=' .$row['id'].'">Delete</a>'
                     .'</td>';
                     echo '</tr>';
                     

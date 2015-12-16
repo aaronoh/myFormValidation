@@ -10,7 +10,7 @@ class GarageTableGateway {
 
     public function getGarage() {
         // execute  query to get all garages
-        $sqlQuery = "SELECT * FROM garage";
+        $sqlQuery = "SELECT * FROM web_garage";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $status = $statement->execute();
@@ -24,7 +24,7 @@ class GarageTableGateway {
 
     public function getGarageById($id) {
         // execute  query to get bus with the requested id
-        $sqlQuery = "SELECT * FROM garage WHERE id = :id";
+        $sqlQuery = "SELECT * FROM web_garage WHERE id = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
@@ -41,7 +41,7 @@ class GarageTableGateway {
     }
 
     public function insertGarage($g) {
-        $sqlQuery = "INSERT INTO garage " .
+        $sqlQuery = "INSERT INTO web_garage " .
                 "(name, address, email, phone, openingdate, openinghours, managername) " .
                 "VALUES (:name, :address, :email, :phone, :openingdate, :openinghours, :managername)";
 
@@ -67,7 +67,7 @@ class GarageTableGateway {
     }
 
     public function deleteGarage($id) {
-        $sqlQuery = "DELETE FROM garage WHERE id = :id";
+        $sqlQuery = "DELETE FROM web_garage WHERE id = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
