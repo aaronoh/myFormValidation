@@ -2,7 +2,6 @@ window.onload = function() {
     var submitBtn = document.getElementById('submit');
     
     submitBtn.addEventListener("click", function (event){
-        
         var valid = true;
         //error elements
         var nameErrorElement = document.getElementById("nameError");
@@ -34,8 +33,8 @@ window.onload = function() {
         var phoneField = document.getElementById('phone');
         var ophrsField = document.getElementById('ophrs');
         var opdateField = document.getElementById('opdate');
-        var facilitiesField = document.getElementByName('facilities[]');
-        var latenightField = document.getElementByName('latenight');
+        var facilitiesField = document.getElementsByName('facilities[]');
+        var latenightField = document.getElementsByName('latenight');
         
         var name = nameField.value;
         var mname = managerNameField.value;
@@ -48,7 +47,7 @@ window.onload = function() {
         var latenight = latenightField.value;
         
         if (name === ""){
-            nameErrorElement.innerHTML = "Name cannot be blankjs";
+            nameErrorElement.innerHTML = "Name cannot be blank";
             valid = false;
         }
         
