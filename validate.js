@@ -107,8 +107,8 @@ window.onload = function() {
         }
         
         var latenightselected = false;
-        for(var i =0; i!==latenight.length; i++){
-            if(latenight[i].checked){
+        for(var i =0; i !==latenightField.length; i++){
+            if(latenightField[i].checked){
                 latenightselected = true;
                 break;
             }
