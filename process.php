@@ -27,7 +27,7 @@
             if($formdata ['opdate'] !== NULL && $formdata ['opdate'] !== FALSE && $formdata ['opdate'] !== ""){
                 $date_array = explode('-', $formdata['opdate']);
                 if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[2], $date_array[0])) {
-                       $errors['opdate'] = "Invalid Date Format: YYYY/MM/DD expected.";
+                       $errors['opdate'] = "Invalid Date Format: YYYY-MM-DD expected.";
                         print_r($date_array);
                 }
             }
