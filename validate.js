@@ -118,7 +118,7 @@ window.onload = function() {
             latenightErrorElement.innerHTML = "Choose an option";
             valid = false;  
         }
-        
+        valid = true;
         //if not valid don't submit form 
         if(!valid){
             event.preventDefault();

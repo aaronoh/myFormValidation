@@ -1,4 +1,6 @@
 <?php
+require_once 'validateGarage.php';
+
 
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
@@ -70,7 +72,7 @@ and open the template in the editor.
 
     <body>
         <h1>Create Garage Form</h1>
-        <form action="process.php" method="post">
+        <form action="createGarage.php" method="post">
             <div class="container">
                 <div class="row">
                     <div class="label">
@@ -90,7 +92,7 @@ and open the template in the editor.
                   <div class="container">
                 <div class="row">
                     <div class="label">
-                        <label for="name">Manager Name: </label>
+                        <label for="mname">Manager Name: </label>
                     </div>
                     <div class="control">
                         <input type="text" name="mname" id="mname" value="<?php setValue ($formdata, 'mname'); ?>" />

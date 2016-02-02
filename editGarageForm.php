@@ -1,5 +1,11 @@
 <?php
 
+function echoValue($array, $fieldName) {
+    if (isset($array) && isset($array[$fieldName])) {
+        echo $array[$fieldName];
+    }
+}
+
 require_once 'garage.php';
 require_once 'dbconnection.php';
 require_once 'garagesTableGateway.php';
@@ -17,19 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $statement = $gateway->getGarageById($id);
 
     $row = $statement->fetch(PDO::FETCH_ASSOC);
-    if (!row) {
+    if (!$row) {
         die("Illegal Request");
     }
-}
-else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+} else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['id'])) {
         die("Illegal request");
     }
     $id = $_POST['id'];
-    
+
     $row = $formdata;
-}
-else {
+} else {
     die("Illegal request");
 }
 
@@ -46,14 +50,15 @@ if (!isset($errors)) {
     </head>
     <body>
         <h1>Edit Garage Form</h1>
-        <?php 
-        if (isset($errorMessage)) {
-            echo '<p>Error: ' . $errorMessage . '</p>';
-        }
-        ?>
+<?php
+if (isset($errorMessage)) {
+    echo '<p>Error: ' . $errorMessage . '</p>';
+}
+?>
         <form action="editGarage.php" 
               method="POST">
-            <input type="hidden" name="id" value="<?php echo $row['id'];; ?>" />
+            <input type="hidden" name="id" value="<?php echo $row['id'];
+        ; ?>" />
             <table border="0">
                 <tbody>
                     <tr>
@@ -65,17 +70,7 @@ if (!isset($errors)) {
                             </span>
                         </td>
                     </tr>
-                    
-                     <tr>
-                        <td>Manager Name: </td>
-                        <td>
-                            <input type="text" name="mname" value="<?php echo $row['mname']; ?>" />
-                            <span id="mnameError" class="error">
-                                <?php echoValue($errors, 'mname'); ?>
-                            </span>
-                        </td>
-                    </tr>
-                    
+
                     <tr>
                         <td>Address: </td>
                         <td>
@@ -85,8 +80,8 @@ if (!isset($errors)) {
                             </span>
                         </td>
                     </tr>
-                    
-                      <tr>
+
+                    <tr>
                         <td>eMail: </td>        
                         <td>
                             <input type="email" name="email" value="<?php echo $row['email']; ?>" />
@@ -95,7 +90,7 @@ if (!isset($errors)) {
                             </span>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>Phone: </td>
                         <td>
@@ -105,13 +100,39 @@ if (!isset($errors)) {
                             </span>
                         </td>
                     </tr>
-                    
+              
                     <tr>
                         <td>Opening Hours: </td>
                         <td>
-                            <input type="text" name="opdate" value="<?php echo $row['opdate']; ?>" />
-                            <span id="opdateError" class="error">
-                                <?php echoValue($errors, 'opdate'); ?>
+                            <input type="text" name="openinghours" value="<?php echo $row['openinghours']; ?>" />
+                            <span id="ophrsError" class="error">
+                                <?php echoValue($errors, 'openinghours'); ?>
                             </span>
                         </td>
                     </tr>
+                    <tr>
+                        <td>Opening Date: </td>
+                        <td>
+                            <input type="text" name="openingdate" value="<?php echo $row['openingdate']; ?>" />
+                            <span id="opdateError" class="error">
+                                <?php echoValue($errors, 'openingdate'); ?>
+                            </span>
+                        </td>
+                     </tr>
+                    <tr>
+                        <td>Manager Name: </td>
+                        <td>
+                            <input type="text" name="managername" value="<?php echo $row['managername']; ?>" />
+                            <span id="mnameError" class="error">
+                                <?php echoValue($errors, 'managername'); ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Update Programmer" name="editProgrammer" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>

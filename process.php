@@ -58,7 +58,7 @@
           
          
            if(empty($errors)){
-               require 'response.php';
+               require 'validateGarage.php';
                
            }
            else{
