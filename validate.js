@@ -34,12 +34,12 @@ window.onload = function() {
         var valid = true;
         //error elements
         var nameErrorElement = document.getElementById("nameError");
-        var managerNameErrorElement = document.getElementById("mnameError");
+        var managerNameErrorElement = document.getElementById("managernameError");
         var addressErrorElement = document.getElementById("addressError");
         var emailErrorElement = document.getElementById("emailError");
         var phoneErrorElement = document.getElementById("phoneError");
-        var ophrsErrorElement = document.getElementById("ophrsError");
-        var opdateErrorElement = document.getElementById("opdateError");
+        var openinghoursErrorElement = document.getElementById("openinghoursError");
+        var openingdateErrorElement = document.getElementById("openingdateError");
         var facilitiesErrorElement = document.getElementById("facilitiesError");
         var latenightErrorElement = document.getElementById("latenightError");
         
@@ -49,30 +49,30 @@ window.onload = function() {
         addressErrorElement.innerHTML = "";
         emailErrorElement.innerHTML = "";
         phoneErrorElement.innerHTML = "";
-        ophrsErrorElement.innerHTML = "";
-        opdateErrorElement.innerHTML = "";
+        openinghoursErrorElement.innerHTML = "";
+        openingdateErrorElement.innerHTML = "";
         facilitiesErrorElement.innerHTML = "";
         latenightErrorElement.innerHTML = "";
         
         //input elements
         var nameField = document.getElementById('name');
-        var managerNameField = document.getElementById('mname');
+        var managerNameField = document.getElementById('managername');
         var addressField = document.getElementById('address');
         var emailField = document.getElementById('email');
         var phoneField = document.getElementById('phone');
-        var ophrsField = document.getElementById('ophrs');
-        var opdateField = document.getElementById('opdate');
+        var openinghoursField = document.getElementById('openinghours');
+        var openingdateField = document.getElementById('openingdate');
         var facilitiesField = document.getElementsByName('facilities[]');
         var latenightField = document.getElementsByName('latenight');
         
         //set variables to value of user input 
         var name = nameField.value;
-        var mname = managerNameField.value;
+        var managername = managerNameField.value;
         var address = addressField.value;
         var email = emailField.value;
         var phone = phoneField.value;
-        var ophrs = ophrsField.value;
-        var opdate = opdateField.value;
+        var openinghours = openinghoursField.value;
+        var openingdate = openingdateField.value;
         var facilities = facilitiesField.value;
         var latenight = latenightField.value;
         
@@ -82,7 +82,7 @@ window.onload = function() {
             valid = false;
         }
         
-        if (mname === ""){
+        if (managername === ""){
             managerNameErrorElement.innerHTML = "Manager Name cannot be blank";
             valid = false;
         }
@@ -92,12 +92,12 @@ window.onload = function() {
             valid = false;
         }
         
-        if (opdate !== "" && !isValidDateFormat(opdate)){
-        opdateErrorElement.innerHTML = "Opening date must be in the format YYYY-MM-DD";
+        if (openingdate !== "" && !isValidDateFormat(openingdate)){
+        openingdateErrorElement.innerHTML = "Opening date must be in the format YYYY-MM-DD";
         valid = false; 
     }
-        else if (opdate != "" && !isDate(opdate)){
-            opdateErrorElement.innerHTML = "Please enter a valid date";
+        else if (openingdate != "" && !isDate(openingdate)){
+            openingdateErrorElement.innerHTML = "Please enter a valid date";
             valid = false;
         }
         

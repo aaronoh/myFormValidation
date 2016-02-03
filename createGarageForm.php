@@ -92,14 +92,14 @@ and open the template in the editor.
                   <div class="container">
                 <div class="row">
                     <div class="label">
-                        <label for="mname">Manager Name: </label>
+                        <label for="managername">Manager Name: </label>
                     </div>
                     <div class="control">
-                        <input type="text" name="mname" id="mname" value="<?php setValue ($formdata, 'mname'); ?>" />
+                        <input type="text" name="managername" id="managername" value="<?php setValue ($formdata, 'managername'); ?>" />
                     </div>
                     <div class="error">
-                        <span id="mnameError">
-                            <?php if(isset($errors['mname'])) echo $errors['mname']; ?>
+                        <span id="managernameError">
+                            <?php if(isset($errors['managername'])) echo $errors['managername']; ?>
                             
                         </span>
                     </div>
@@ -148,27 +148,27 @@ and open the template in the editor.
                 </div>
                    <div class="row">
                     <div class="label">
-                        <label for="ophrs"> Opening Hours: </label>
+                        <label for="openinghours"> Opening Hours: </label>
                     </div>
                     <div class="control">
-                        <input type="text" name="ophrs" id="ophrs" value="<?php setValue ($formdata, 'ophrs'); ?>" />
+                        <input type="text" name="openinghours" id="openinghours" value="<?php setValue ($formdata, 'openinghours'); ?>" />
                     </div>
                     <div class="error">
-                        <span id="ophrsError">
-                                <?php if(isset($errors['ophrs'])) echo $errors['ophrs']; ?>
+                        <span id="openinghoursError">
+                                <?php if(isset($errors['openinghours'])) echo $errors['openinghours']; ?>
                             </span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="label">
-                        <label for="opdate"> Opening Date: (YYYY-MM-DD) </label>
+                        <label for="openingdate"> Opening Date: (YYYY-MM-DD) </label>
                     </div>
                     <div class="control">
-                        <input type="text" name="opdate" id="opdate" value="<?php setValue ($formdata, 'opdate'); ?>" />
+                        <input type="text" name="openingdate" id="openingdate" value="<?php setValue ($formdata, 'openingdate'); ?>" />
                     </div>
                     <div class="error">
-                        <span id="opdateError">
-                                   <?php if(isset($errors['opdate'])) echo $errors['opdate']; ?>
+                        <span id="openingdateError">
+                                   <?php if(isset($errors['openingdate'])) echo $errors['openingdate']; ?>
                                </span>
                     </div>
                 </div>

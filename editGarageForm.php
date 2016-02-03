@@ -1,14 +1,8 @@
 <?php
-
-function echoValue($array, $fieldName) {
-    if (isset($array) && isset($array[$fieldName])) {
-        echo $array[$fieldName];
-    }
-}
-
 require_once 'garage.php';
 require_once 'dbconnection.php';
 require_once 'garagesTableGateway.php';
+require_once 'validateGarage.php';
 
 
 
@@ -50,15 +44,16 @@ if (!isset($errors)) {
     </head>
     <body>
         <h1>Edit Garage Form</h1>
-<?php
-if (isset($errorMessage)) {
-    echo '<p>Error: ' . $errorMessage . '</p>';
-}
-?>
+        <?php
+        if (isset($errorMessage)) {
+            echo '<p>Error: ' . $errorMessage . '</p>';
+        }
+        ?>        
         <form action="editGarage.php" 
               method="POST">
-            <input type="hidden" name="id" value="<?php echo $row['id'];
-        ; ?>" />
+            <input type="hidden" name="id" value="<?php echo $id;
+       
+       ?>" />
             <table border="0">
                 <tbody>
                     <tr>
@@ -100,12 +95,12 @@ if (isset($errorMessage)) {
                             </span>
                         </td>
                     </tr>
-              
+
                     <tr>
                         <td>Opening Hours: </td>
                         <td>
                             <input type="text" name="openinghours" value="<?php echo $row['openinghours']; ?>" />
-                            <span id="ophrsError" class="error">
+                            <span id="openinghoursError" class="error">
                                 <?php echoValue($errors, 'openinghours'); ?>
                             </span>
                         </td>
@@ -114,20 +109,20 @@ if (isset($errorMessage)) {
                         <td>Opening Date: </td>
                         <td>
                             <input type="text" name="openingdate" value="<?php echo $row['openingdate']; ?>" />
-                            <span id="opdateError" class="error">
+                            <span id="openingdateError" class="error">
                                 <?php echoValue($errors, 'openingdate'); ?>
                             </span>
                         </td>
-                     </tr>
+                    </tr>
                     <tr>
                         <td>Manager Name: </td>
                         <td>
                             <input type="text" name="managername" value="<?php echo $row['managername']; ?>" />
-                            <span id="mnameError" class="error">
+                            <span id="managernameError" class="error">
                                 <?php echoValue($errors, 'managername'); ?>
                             </span>
                         </td>
-                    </tr>
+                    </tr>   
                     <tr>
                         <td></td>
                         <td>
