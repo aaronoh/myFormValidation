@@ -71,7 +71,6 @@ class GarageTableGateway {
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
-            
             "id" => $id
         );
 
@@ -83,10 +82,10 @@ class GarageTableGateway {
 
         return ($statement->rowCount() == 1);
     }
-    
-        public function update($g) {
+
+    public function update($g) {
         $sql = "UPDATE garages SET " .
-                "name = :name, " . 
+                "name = :name, " .
                 "address = :address, " .
                 "email = :email, " .
                 "phone = :phone, " .
@@ -94,22 +93,24 @@ class GarageTableGateway {
                 "openinghours = :openinghours " .
                 "managername = :managername " .
                 " WHERE id = :id";
-        
+
         $statement = $this->dbconnection->prepare($sql);
         $params = array(
-            "name" => $g->getName(),
-            "address" => $g->getAddress(),
-            "email" => $g->getEmail(),
-            "phone" => $g->getPhone(),
-            "openingdate" => $g->getOpeningDate(),
+            "id"         => $g->getId(),
+            "name"         => $g->getName(),
+            "address"      => $g->getAddress(),
+            "email"        => $g->getEmail(),
+            "phone"        => $g->getPhone(),
+            "openingdate"  => $g->getOpeningDate(),
             "openinghours" => $g->getOpeningHours(),
-            "managername" => $g->getManagerName(),
-        );
-        
+            "managername"  => $g->getManagerName()
+            );
+
         $status = $statement->execute($params);
-        
+
         if (!$status) {
             die("Could not update garage");
         }
     }
+
 }
