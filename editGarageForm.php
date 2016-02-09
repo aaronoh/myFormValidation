@@ -126,7 +126,7 @@ if (!isset($errors)) {
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit" value="Update Programmer" name="editProgrammer" />
+                            <input type="submit" value="Update Garage" name="editGarage" />
                         </td>
                     </tr>
                 </tbody>

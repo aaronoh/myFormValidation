@@ -84,13 +84,13 @@ class GarageTableGateway {
     }
 
     public function update($g) {
-        $sql = "UPDATE garages SET " .
+        $sql = "UPDATE web_garage SET " .
                 "name = :name, " .
                 "address = :address, " .
                 "email = :email, " .
                 "phone = :phone, " .
                 "openingdate = :openingdate, " .
-                "openinghours = :openinghours " .
+                "openinghours = :openinghours, " .
                 "managername = :managername " .
                 " WHERE id = :id";
 
@@ -106,6 +106,11 @@ class GarageTableGateway {
             "managername"  => $g->getManagerName()
             );
 
+        echo '<pre>';
+        print_r($params);
+        echo '</pre>';
+        
+        
         $status = $statement->execute($params);
 
         if (!$status) {

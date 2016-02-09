@@ -2,8 +2,8 @@
 require_once'dbconnection.php';
 require_once 'garagesTableGateway.php';
 
-if(!isset($_GET['id'])){
-die("Illegal Request");
+if (!isset($_GET['id'])) {
+    die("Illegal Request");
 }
 $id = $_GET['id'];
 
@@ -13,8 +13,8 @@ $gateway = new garageTableGateway($dbconnection);
 $statement = $gateway->getGarageById($id);
 
 $row = $statement->fetch(PDO::FETCH_ASSOC);
-if(!$row){
-die("Illegal Request");
+if (!$row) {
+    die("Illegal Request");
 }
 ?>
 
@@ -25,6 +25,7 @@ die("Illegal Request");
         <title></title>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="deleteConfirm.js"></script>
     </head>
     <body>
 
@@ -49,8 +50,11 @@ die("Illegal Request");
                 echo '<td>' . $row['openinghours'] . '</td>';
                 echo '<td>' . $row['managername'] . '</td>';
                 echo '<td>'
-                .'<a href="deleteGarage.php?id=' .$row['id'].'">Delete</a>'
-                .'</td>';
+                . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '">Delete</a>'
+                . '</td>';
+                echo '<td>'
+                . '<a href="editGarageForm.php?id=' . $row['id'] . '">Edit</a>'
+                . '</td>';
                 echo '</tr>';
                 ?>
         </table>
