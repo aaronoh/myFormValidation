@@ -9,6 +9,15 @@
 require_once 'garage.php';
 require_once 'dbconnection.php';
 require_once 'garagesTableGateway.php';
+//require_once 'loginhelper.php';
+
+//start_session();
+//
+//if (!is_logged_in()) {
+//    header("Location: loginform.php");
+//}
+//
+//$user = $_SESSION['user'];
 
 
 $dbconnection = dbconnection::getConnection();
@@ -26,8 +35,10 @@ $statement = $gateway->getGarage();
         <script src="deleteConfirm.js"></script>
     </head>
     <body>
-      
-        <table class =" pure-table test">
+       <?php require 'utils/styles.php'; ?>
+        <?php require 'utils/scripts.php'; ?>
+        <div class="col-lg-10 col-lg-offset-1">
+        <table class ="table table-striped">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -67,5 +78,6 @@ $statement = $gateway->getGarage();
                 ?>
         </table>
         <p><a href ="createGarageForm.php">Add Garage</a></p>
+        </div>
     </body>
 </html>

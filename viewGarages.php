@@ -28,8 +28,10 @@ if (!$row) {
         <script src="deleteConfirm.js"></script>
     </head>
     <body>
-
-        <table class =" pure-table test">
+        <?php require 'utils/styles.php'; ?>
+        <?php require 'utils/scripts.php'; ?>
+        <div class="col-lg-10 col-lg-offset-1">
+        <table class ="table table-striped">
             <thead>
                 <tr>
                     <th>Name</th>

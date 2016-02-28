@@ -4,7 +4,6 @@ require_once 'user.php';
 require_once 'dbconnection.php';
 require_once 'UserTableGateway.php';
 
-
 start_session();
 
 // try to register the user - if there are any error/
@@ -18,29 +17,25 @@ try {
 
     $formdata['username'] = filter_input($input_method, "username", FILTER_SANITIZE_STRING);
     $formdata['password'] = filter_input($input_method, "password", FILTER_SANITIZE_STRING);
-    $formdata['cpassword'] = filter_input($input_method, "cpassword", FILTER_SANITIZE_STRING);
+    $formdata['password2'] = filter_input($input_method, "password2", FILTER_SANITIZE_STRING);
 
     // throw an exception if any of the form fields 
     // are empty
     if (empty($formdata['username'])) {
         $errors['username'] = "Username required";
     }
-    //$email = filter_var($formdata['username'], FILTER_VALIDATE_EMAIL);
-    //if ($email != $formdata['username']) {
-    //    $errors['username'] = "Valid email required required";
-    //}
 
     if (empty($_POST['password'])) {
-        $errors['password'] = "Password required";
+        $errors['password'] = "Please Enter a Password";
     }
-    if (empty($formdata['cpassword'])) {
-        $errors['cpassword'] = "Confirm password required";
+    if (empty($formdata['password2'])) {
+        $errors['password2'] = "Please Confirm Your Password";
     }
     // if the password fields do not match 
     // then throw an exception
-    if (!empty($formdata['password']) && !empty($formdata['cpassword']) 
-            && $formdata['password'] != $formdata['cpassword']) {
-        $errors['password'] = "Passwords must match";
+    if (!empty($formdata['password']) && !empty($formdata['password2']) 
+            && $formdata['password'] != $formdata['password2']) {
+        $errors['password'] = "Passwords do not match";
     }
 
     if (empty($errors)) {
@@ -48,11 +43,11 @@ try {
         // store the form data in variables
         $username = $formdata['username'];
         $password = $formdata['password'];
-        $cpassword = $formdata['cpassword'];
+        $password2 = $formdata['password2'];
 
         // create a UserTable object and use it to retrieve 
         // the users
-        $connection = DB::getInstance();
+        $connection = dbconnection::getConnection();
         $userTable = new UserTable($connection);
         $user = $userTable->getUserByUsername($username);
 
@@ -60,12 +55,12 @@ try {
         // has already been registered - if it is then throw
         // and exception
         if ($user != null) {
-            $errors['username'] = "Username already registered";
+            $errors['username'] = "This username is taken";
         }
     }
     
     if (!empty($errors)) {
-        throw new Exception("There were errors. Please fix them.");
+        throw new Exception();
     }
     
     // since the username is not aleady registered, create
@@ -92,6 +87,6 @@ catch (Exception $ex) {
     // from the exception and send the user the
     // registration form
     $errorMessage = $ex->getMessage();
-    require 'register_form.php';
+    require 'registerform.php';
 }
 ?>

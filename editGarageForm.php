@@ -3,14 +3,22 @@ require_once 'garage.php';
 require_once 'dbconnection.php';
 require_once 'garagesTableGateway.php';
 require_once 'validateGarage.php';
+//require_once 'loginhelper.php';
 
 
+//start_session();
+//
+//if (!is_logged_in()) {
+//    header("Location: loginform.php");
+//}
+//
+//$user = $_SESSION['user'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (!isset($_GET['id'])) {
         die("Illegal Request");
     }
-    $id = $_GET['id'];
+   $id = $_GET['id'];
 
     $dbconnection = dbconnection::getConnection();
     $gateway = new garageTableGateway($dbconnection);

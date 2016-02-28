@@ -6,6 +6,7 @@
     </head>
     <body>
         <?php require 'utils/styles.php'; ?>
+        <?php require 'utils/scripts.php'; ?>
         <?php
         if (isset($errorMessage))
             echo "<p>$errorMessage</p>";
@@ -36,7 +37,7 @@
                     </span>
                 </div>
                 <input type="submit"class = " btn btn-default login" value="Login" />
-                <p><a href="register_form.php">Register</a></p>                
+                <p><a href="registerForm.php">Register</a></p>                
             </form>
         </div>
 
