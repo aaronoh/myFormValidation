@@ -46,15 +46,15 @@ class BusTableGateway {
                 "VALUES (:reg, :make, :model, :capacity, :engineSize, :purchaseDate, :serviceDate, :garageID)";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
-//*******************************************************************************************************************//
         $params = array(
-            "name" => $g->getName(),
-            "address" => $g->getAddress(),
-            "email" => $g->getEmail(),
-            "phone" => $g->getPhone(),
-            "openingdate" => $g->getOpeningDate(),
-            "openinghours" => $g->getOpeningHours(),
-            "managername" => $g->getManagerName(),
+            "reg" => $b->getReg(),
+            "make" => $b->getMake(),
+            "model" => $b->getModel(),
+            "capacity" => $b->getCapacity(),
+            "engineSize" => $b->getEngineSize(),
+            "purchaseDate" => $b->getPurchaseDate(),
+            "serviceDate" => $b->getServiceDate(),
+            "garageID" => $b->getgid()
         );
 
         $status = $statement->execute($params);
@@ -66,9 +66,11 @@ class BusTableGateway {
         $id = $this->dbconnection->lastInsertId();
         return $id;
     }
+    
+    //*******************************************************************************************************************//
 
-    public function deleteGarage($id) {
-        $sqlQuery = "DELETE FROM web_garage WHERE id = :id";
+    public function deleteBus($id) {
+        $sqlQuery = "DELETE FROM bus WHERE id = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
         $params = array(
@@ -84,39 +86,39 @@ class BusTableGateway {
         return ($statement->rowCount() == 1);
     }
 
-    public function update($g) {
-        $sql = "UPDATE web_garage SET " .
-                "name = :name, " .
-                "address = :address, " .
-                "email = :email, " .
-                "phone = :phone, " .
-                "openingdate = :openingdate, " .
-                "openinghours = :openinghours, " .
-                "managername = :managername " .
-                " WHERE id = :id";
-
-        $statement = $this->dbconnection->prepare($sql);
-        $params = array(
-            "id"         => $g->getId(),
-            "name"         => $g->getName(),
-            "address"      => $g->getAddress(),
-            "email"        => $g->getEmail(),
-            "phone"        => $g->getPhone(),
-            "openingdate"  => $g->getOpeningDate(),
-            "openinghours" => $g->getOpeningHours(),
-            "managername"  => $g->getManagerName()
-            );
-
-        echo '<pre>';
-        print_r($params);
-        echo '</pre>';
-        
-        
-        $status = $statement->execute($params);
-
-        if (!$status) {
-            die("Could not update garage");
-        }
-    }
+//    public function update($g) {
+//        $sql = "UPDATE web_garage SET " .
+//                "name = :name, " .
+//                "address = :address, " .
+//                "email = :email, " .
+//                "phone = :phone, " .
+//                "openingdate = :openingdate, " .
+//                "openinghours = :openinghours, " .
+//                "managername = :managername " .
+//                " WHERE id = :id";
+//
+//        $statement = $this->dbconnection->prepare($sql);
+//        $params = array(
+//            "id"         => $g->getId(),
+//            "name"         => $g->getName(),
+//            "address"      => $g->getAddress(),
+//            "email"        => $g->getEmail(),
+//            "phone"        => $g->getPhone(),
+//            "openingdate"  => $g->getOpeningDate(),
+//            "openinghours" => $g->getOpeningHours(),
+//            "managername"  => $g->getManagerName()
+//            );
+//
+//        echo '<pre>';
+//        print_r($params);
+//        echo '</pre>';
+//        
+//        
+//        $status = $statement->execute($params);
+//
+//        if (!$status) {
+//            die("Could not update garage");
+//        }
+//    }
 
 }
