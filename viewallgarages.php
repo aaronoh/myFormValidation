@@ -1,4 +1,5 @@
 <?php
+require_once 'loginhelper.php';
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -9,15 +10,18 @@
 require_once 'garage.php';
 require_once 'dbconnection.php';
 require_once 'garagesTableGateway.php';
-//require_once 'loginhelper.php';
 
-//start_session();
-//
-//if (!is_logged_in()) {
-//    header("Location: loginform.php");
-//}
-//
-//$user = $_SESSION['user'];
+start_session();
+
+echo '<pre>';
+print_r(session_id());
+echo '</pre>';
+
+if (!is_logged_in()) {
+    header("Location: loginform.php");
+}
+
+$user = $_SESSION['user'];
 
 
 $dbconnection = dbconnection::getConnection();
@@ -25,7 +29,7 @@ $gateway = new garageTableGateway($dbconnection);
 
 $statement = $gateway->getGarage();
 ?>
-<!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">

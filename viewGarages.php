@@ -1,6 +1,8 @@
 <?php
+require_once 'loginhelper.php';
 require_once'dbconnection.php';
 require_once 'garagesTableGateway.php';
+
 
 if (!isset($_GET['id'])) {
     die("Illegal Request");

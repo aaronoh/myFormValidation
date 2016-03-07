@@ -12,5 +12,7 @@
     <body>        
         <button type="button" onclick="location.href = 'viewallgarages.php'" class=" buttonstyle button1-spacing">
             Garages</button>
+         <button type="button" onclick="location.href = 'viewallbuses.php'" class=" buttonstyle button1-spacing">
+            Buses</button>
     </body>
 </html>
