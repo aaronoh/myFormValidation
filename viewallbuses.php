@@ -83,7 +83,7 @@ $statement = $gateway->getBus();
                 }
                 ?>
         </table>
-        <p><a href ="createGarageForm.php">Add Garage</a></p>
+        <p><a href ="createBusForm.php">Add Bus</a></p>
         </div>
     </body>
 </html>

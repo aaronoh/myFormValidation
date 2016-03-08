@@ -16,7 +16,7 @@ class Bus {
         $this->reg = $rg;
         $this->make = $mk;
         $this->model = $md;
-        $this->capaciy = $cp;
+        $this->capacity = $cp;
         $this->enginesize = $esz;
         $this->purchasedate = $pd;
         $this->servicedate = $sd;

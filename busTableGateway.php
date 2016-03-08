@@ -54,8 +54,14 @@ class BusTableGateway {
             "engineSize" => $b->getEngineSize(),
             "purchaseDate" => $b->getPurchaseDate(),
             "serviceDate" => $b->getServiceDate(),
-            "garageID" => $b->getgid()
+            "garageID" => $b->getgid(),
         );
+        
+        
+//        echo '<pre>';
+//        print_r($params);
+//        print_r($b);
+//        echo '</pre>';
 
         $status = $statement->execute($params);
 

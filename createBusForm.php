@@ -40,7 +40,7 @@ and open the template in the editor.
                 <form class="form-horizontal" action="createBus.php" method="post">
 
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Reg" reg="reg" id="reg" value="<?php setValue($formdata, 'reg'); ?>" />
+                        <input class="form-control" type="text" placeholder="Reg" name="reg" id="reg" value="<?php setValue($formdata, 'reg'); ?>" />
                         <div class="error">
                             <span id="regError">
 <?php if (isset($errors['reg'])) echo $errors['reg']; ?>
@@ -49,7 +49,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" type="text"  placeholder="Make" reg="make" id="make" value="<?php setValue($formdata, 'make'); ?>" />
+                        <input class="form-control" type="text"  placeholder="Make" name="make" id="make" value="<?php setValue($formdata, 'make'); ?>" />
                         <div class="error">
                             <span id="makeError">
 <?php if (isset($errors['make'])) echo $errors['make']; ?>
@@ -59,7 +59,7 @@ and open the template in the editor.
 
                     <div class="form-group">
 
-                        <input class="form-control" type="text"  placeholder="Model" reg="model" id="model" value="<?php setValue($formdata, 'model'); ?>" />
+                        <input class="form-control" type="text"  placeholder="Model" name="model" id="model" value="<?php setValue($formdata, 'model'); ?>" />
 
                         <div class="error">
                             <span id="modelError">
@@ -69,7 +69,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control"  placeholder="Capacity" type="number" reg="capacity" id="capacity" value="<?php setValue($formdata, 'capacity'); ?>" />
+                        <input class="form-control"  placeholder="Capacity" type="number" name="capacity" id="capacity" value="<?php setValue($formdata, 'capacity'); ?>" />
 
                         <div class="error">
                             <span id="capacityError">
@@ -79,7 +79,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" placeholder="Engine Size" type="text" reg="engineSize" id="engineSize" value="<?php setValue($formdata, 'engineSize'); ?>" />
+                        <input class="form-control" placeholder="Engine Size" type="text" name="engineSize" id="engineSize" value="<?php setValue($formdata, 'engineSize'); ?>" />
                         <div class="error">
                             <span id="engineSizeError">
 <?php if (isset($errors['engineSize'])) echo $errors['engineSize']; ?>
@@ -89,7 +89,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control"  placeholder="Purchase Date    (YYYY-MM-DD)" reg="purchaseDate" id="purchaseDate" value="<?php setValue($formdata, 'purchaseDate'); ?>" />
+                        <input type="text" class="form-control"  placeholder="Purchase Date    (YYYY-MM-DD)" name="purchaseDate" id="purchaseDate" value="<?php setValue($formdata, 'purchaseDate'); ?>" />
                         <div class="error">
                             <span id="purchaseDateError">
 <?php if (isset($errors['purchaseDate'])) echo $errors['purchaseDate']; ?>
@@ -97,7 +97,7 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control"  placeholder="Service Date       (YYYY-MM-DD)" reg="serviceDate" id="serviceDate" value="<?php setValue($formdata, 'serviceDate'); ?>" />
+                        <input type="text" class="form-control"  placeholder="Service Date       (YYYY-MM-DD)" name="serviceDate" id="serviceDate" value="<?php setValue($formdata, 'serviceDate'); ?>" />
                         <div class="error">
                             <span id="serviceDateError">
 <?php if (isset($errors['serviceDate'])) echo $errors['serviceDate']; ?>
@@ -105,7 +105,7 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Garage ID" type="text" reg="gid" id="gid" value="<?php setValue($formdata, 'gid'); ?>" />
+                        <input class="form-control" placeholder="Garage ID" type="text" name="gid" id="gid" value="<?php setValue($formdata, 'gid'); ?>" />
                         <div class="error">
                             <span id="gidError">
 <?php if (isset($errors['gid'])) echo $errors['gid']; ?>

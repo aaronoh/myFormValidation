@@ -41,14 +41,18 @@ $errors = array();
     $purchaseDate = $_POST['purchaseDate'];
     $serviceDate = $_POST['serviceDate'];
     $gid = $_POST['gid'];
+    
 
-    $bus = new Bus(-1, $reg, $make, $model, $capacity, $engineSize, $purchaseDate, $serviceDate, $gid);
-
+    $bus = new Bus(-1, $reg, $make, $model, 2, $engineSize, $purchaseDate, $serviceDate, $gid);
+        
     $dbconnection = dbconnection::getConnection();
 
     $gateway = new busTableGateway($dbconnection);
-
+    
     $id = $gateway->insertBus($bus);
 
+        
+
     header('Location: viewallbuses.php');
+    
 ?>
