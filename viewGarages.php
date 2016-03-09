@@ -33,34 +33,34 @@ if (!$row) {
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
         <div class="col-lg-10 col-lg-offset-1">
-        <table class ="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Opening Date</th>
-                    <th>Opening Hours</th>
-                    <th>Manager Name</th>
-                </tr>
-                <?php
-                echo '<tr>';
-                echo '<td>' . $row['name'] . '</td>';
-                echo '<td>' . $row['address'] . '</td>';
-                echo '<td>' . $row['email'] . '</td>';
-                echo '<td>' . $row['phone'] . '</td>';
-                echo '<td>' . $row['openingdate'] . '</td>';
-                echo '<td>' . $row['openinghours'] . '</td>';
-                echo '<td>' . $row['managername'] . '</td>';
-                echo '<td>'
-                . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '">Delete</a>'
-                . '</td>';
-                echo '<td>'
-                . '<a href="editGarageForm.php?id=' . $row['id'] . '">Edit</a>'
-                . '</td>';
-                echo '</tr>';
-                ?>
-        </table>
+            <table class ="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Opening Date</th>
+                        <th>Opening Hours</th>
+                        <th>Manager Name</th>
+                    </tr>
+                    <?php
+                    echo '<tr>';
+                    echo '<td>' . $row['name'] . '</td>';
+                    echo '<td>' . $row['address'] . '</td>';
+                    echo '<td>' . $row['email'] . '</td>';
+                    echo '<td>' . $row['phone'] . '</td>';
+                    echo '<td>' . $row['openingdate'] . '</td>';
+                    echo '<td>' . $row['openinghours'] . '</td>';
+                    echo '<td>' . $row['managername'] . '</td>';
+                    echo '<td>'
+                    . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '">Delete</a>'
+                    . '</td>';
+                    echo '<td>'
+                    . '<a href="editGarageForm.php?id=' . $row['id'] . '">Edit</a>'
+                    . '</td>';
+                    echo '</tr>';
+                    ?>
+            </table>
     </body>
 </html>

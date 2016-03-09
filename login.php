@@ -13,12 +13,12 @@ start_session();
 try {
     $formdata = array();
     $errors = array();
-    
+
     $input_method = INPUT_POST;
 
     $formdata['username'] = filter_input($input_method, "username", FILTER_SANITIZE_STRING);
     $formdata['password'] = filter_input($input_method, "password", FILTER_SANITIZE_STRING);
-    
+
     // throw an exception if any fields empty
     if (empty($formdata['username'])) {
         $errors['username'] = "Username required";
@@ -33,34 +33,32 @@ try {
         $username = $formdata['username'];
         $password = $formdata['password'];
 
-       //retrieve users
+        //retrieve users
         $connection = dbconnection::getConnection();
         $userTable = new UserTable($connection);
         $user = $userTable->getUserByUsername($username);
 
-       //check if user already registered
+        //check if user already registered
         if ($user == null) {
             $errors['username'] = "Username is not registered";
-        }
-        else {
+        } else {
             if ($password !== $user->getPassword()) {
                 $errors['password'] = "Password is incorrect";
             }
         }
     }
-    
+
     if (!empty($errors)) {
         throw new Exception("There were errors. Please fix them.");
     }
-    
-  //create new user, add to db
+
+    //create new user, add to db
     $_SESSION['user'] = $user;
-    
+
 //redirect to index when reg + logged in
-   
+
     header('Location: index.php');
-}
-catch (Exception $ex) {
+} catch (Exception $ex) {
     // if an exception occurs then extract the message
     // from the exception and send the user the
     // registration form

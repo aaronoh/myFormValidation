@@ -1,3 +1,7 @@
+body{
+    font-family: 'Cantarell', sans-serif;
+}
+
 .login-form {
     margin-top: 50px;
 
@@ -82,4 +86,52 @@ label {
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     background-color: transparent;
     border-bottom-style: dashed;
+}
+
+.test{
+    width: 100%;
+}
+
+.navbar{
+    border-radius: 0px;
+    margin-top: -50px;
+
+}
+
+a{
+    color: white;
+}
+a:hover{
+    color: white;
+    font-weight: bold;
+}
+
+.jumbotron { 
+    background-image:url('../imgs/header.png');
+    background-size: 100% 600px; 
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+navbar-nav a:hover{
+    color: green;
+}
+
+.controlpanel{
+    height: 500px;
+    margin-top: -30px;
+}
+
+.landingheader{
+    color: #0eb493;
+    font-weight: bold;
+}
+
+.landnghr{
+    margin-left: 750px;
+}
+
+.T1{
+    background-color: pink;
+    height: 150px;
 }

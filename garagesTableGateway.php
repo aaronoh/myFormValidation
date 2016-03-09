@@ -96,21 +96,21 @@ class GarageTableGateway {
 
         $statement = $this->dbconnection->prepare($sql);
         $params = array(
-            "id"         => $g->getId(),
-            "name"         => $g->getName(),
-            "address"      => $g->getAddress(),
-            "email"        => $g->getEmail(),
-            "phone"        => $g->getPhone(),
-            "openingdate"  => $g->getOpeningDate(),
+            "id" => $g->getId(),
+            "name" => $g->getName(),
+            "address" => $g->getAddress(),
+            "email" => $g->getEmail(),
+            "phone" => $g->getPhone(),
+            "openingdate" => $g->getOpeningDate(),
             "openinghours" => $g->getOpeningHours(),
-            "managername"  => $g->getManagerName()
-            );
+            "managername" => $g->getManagerName()
+        );
 
         echo '<pre>';
         print_r($params);
         echo '</pre>';
-        
-        
+
+
         $status = $statement->execute($params);
 
         if (!$status) {

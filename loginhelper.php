@@ -1,4 +1,5 @@
 <?php
+
 require_once 'user.php';
 
 function start_session() {
@@ -7,8 +8,10 @@ function start_session() {
         session_start();
     }
 }
+
 function is_logged_in() {
     start_session();
     return (isset($_SESSION['user']));
 }
+
 ?>

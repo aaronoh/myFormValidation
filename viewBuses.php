@@ -57,22 +57,22 @@ echo '</pre>';
                         <th>Garage ID</th>
                     </tr>
                     <?php
-                        echo '<td>' . $row['reg'] . '</td>';
-                        echo '<td>' . $row['make'] . '</td>';
-                        echo '<td>' . $row['model'] . '</td>';
-                        echo '<td>' . $row['capacity'] . '</td>';
-                        echo '<td>' . $row['engineSize'] . '</td>';
-                        echo '<td>' . $row['purchaseDate'] . '</td>';
-                        echo '<td>' . $row['serviceDate'] . '</td>';
-                        echo '<td>' . $row['garageID'] . '</td>';
-                        echo '<td>'
-                        . '<a href="editBusForm.php?id=' . $row['id'] . '">Edit</a>'
-                        . '</td>';
+                    echo '<td>' . $row['reg'] . '</td>';
+                    echo '<td>' . $row['make'] . '</td>';
+                    echo '<td>' . $row['model'] . '</td>';
+                    echo '<td>' . $row['capacity'] . '</td>';
+                    echo '<td>' . $row['engineSize'] . '</td>';
+                    echo '<td>' . $row['purchaseDate'] . '</td>';
+                    echo '<td>' . $row['serviceDate'] . '</td>';
+                    echo '<td>' . $row['garageID'] . '</td>';
+                    echo '<td>'
+                    . '<a href="editBusForm.php?id=' . $row['id'] . '">Edit</a>'
+                    . '</td>';
 
-                        echo '<td>'
-                        . '<a class="delete_btn" href="deleteBus.php?id=' . $row['id'] . '">Delete</a>'
-                        . '</td>';
-                        echo '</tr>';
+                    echo '<td>'
+                    . '<a class="delete_btn" href="deleteBus.php?id=' . $row['id'] . '">Delete</a>'
+                    . '</td>';
+                    echo '</tr>';
                     ?>
             </table>
 

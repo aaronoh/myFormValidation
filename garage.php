@@ -1,12 +1,13 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 class Garage {
+
     private $id;
     private $name;
     private $address;
@@ -15,9 +16,9 @@ class Garage {
     private $openingdate;
     private $openinghours;
     private $managername;
-    
+
     public function __construct($id, $nm, $ad, $em, $ph, $op, $hrs, $mnm) {
-        
+
         $this->id = $id;
         $this->name = $nm;
         $this->address = $ad;
@@ -27,13 +28,37 @@ class Garage {
         $this->openinghours = $hrs;
         $this->managername = $mnm;
     }
-    
-    public function getId() { return $this->id; }
-    public function getName() { return $this->name; }
-    public function getAddress() { return $this->address; }
-    public function getEmail() { return $this->email; }
-    public function getPhone() { return $this->phone; }
-    public function getOpeningDate() { return $this->openingdate; }
-    public function getOpeningHours() { return $this->openinghours; }
-    public function getManagerName() { return $this->managername; }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getAddress() {
+        return $this->address;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function getPhone() {
+        return $this->phone;
+    }
+
+    public function getOpeningDate() {
+        return $this->openingdate;
+    }
+
+    public function getOpeningHours() {
+        return $this->openinghours;
+    }
+
+    public function getManagerName() {
+        return $this->managername;
+    }
+
 }

@@ -1,4 +1,5 @@
 <?php
+
 require_once 'garage.php';
 require_once 'garagesTableGateway.php';
 require_once 'dbconnection.php';

@@ -1,4 +1,5 @@
 <?php
+
 class dbconnection {
 
     private static $dbconnection = NULL;
@@ -12,7 +13,7 @@ class dbconnection {
             $password = "N00143888";
 
             $dsn = "mysql:host=" . $host . ";dbname=" . $database;
-           dbconnection::$dbconnection = new PDO($dsn, $username, $password);
+            dbconnection::$dbconnection = new PDO($dsn, $username, $password);
             if (!dbconnection::$dbconnection) {
                 die("Database connection failed");
             }
@@ -20,4 +21,5 @@ class dbconnection {
 
         return dbconnection::$dbconnection;
     }
+
 }

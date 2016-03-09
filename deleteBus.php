@@ -3,7 +3,7 @@
 require_once 'bustablegateway.php';
 require_once 'dbconnection.php';
 
-if(!isset($_GET['id'])){
+if (!isset($_GET['id'])) {
     die("Illegal Request");
 }
 $id = $_GET['id'];

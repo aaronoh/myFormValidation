@@ -1,4 +1,5 @@
 <?php
+
 require_once 'loginhelper.php';
 require_once 'user.php';
 require_once 'dbconnection.php';
@@ -12,7 +13,7 @@ start_session();
 try {
     $formdata = array();
     $errors = array();
-    
+
     $input_method = INPUT_POST;
 
     $formdata['username'] = filter_input($input_method, "username", FILTER_SANITIZE_STRING);
@@ -33,8 +34,7 @@ try {
     }
     // if the password fields do not match 
     // then throw an exception
-    if (!empty($formdata['password']) && !empty($formdata['password2']) 
-            && $formdata['password'] != $formdata['password2']) {
+    if (!empty($formdata['password']) && !empty($formdata['password2']) && $formdata['password'] != $formdata['password2']) {
         $errors['password'] = "Passwords do not match";
     }
 
@@ -58,11 +58,11 @@ try {
             $errors['username'] = "This username is taken";
         }
     }
-    
+
     if (!empty($errors)) {
         throw new Exception();
     }
-    
+
     // since the username is not aleady registered, create
     // a new User object, add it to the database using the
     // UserTable object, and store it in the session array
@@ -71,7 +71,7 @@ try {
     $id = $userTable->insert($user);
     $user->setId($id);
     $_SESSION['user'] = $user;
-    
+
     // now the user is registered and logged in so redirect
     // them the their home page
     // Note the user is redirected to home.php rather than
@@ -81,8 +81,7 @@ try {
     // 
     // require 'home.php';
     header('Location: index.php');
-}
-catch (Exception $ex) {
+} catch (Exception $ex) {
     // if an exception occurs then extract the message
     // from the exception and send the user the
     // registration form

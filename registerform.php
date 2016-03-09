@@ -2,11 +2,11 @@
     <head>
         <meta content="text/html; charset=UTF-8">
         <title></title>
-       <?php require 'utils/styles.php'; ?>
+        <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
     </head>
     <body>
-      
+
         <h2>Register Form</h2>
         <?php
         if (isset($errorMessage))
@@ -45,6 +45,6 @@
             <input type="submit" value="Register" />
             <p><a href="loginForm.php">Login</a></p>
         </form>
-        
+
     </body>
 </html>

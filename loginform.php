@@ -7,7 +7,7 @@
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
-        
+
         <?php
         if (isset($errorMessage))
             echo "<p>$errorMessage</p>";

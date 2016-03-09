@@ -4,8 +4,6 @@ require_once 'dbconnection.php';
 require_once 'garagesTableGateway.php';
 require_once 'validateGarage.php';
 //require_once 'loginhelper.php';
-
-
 //start_session();
 //
 //if (!is_logged_in()) {
@@ -18,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (!isset($_GET['id'])) {
         die("Illegal Request");
     }
-   $id = $_GET['id'];
+    $id = $_GET['id'];
 
     $dbconnection = dbconnection::getConnection();
     $gateway = new garageTableGateway($dbconnection);
@@ -60,8 +58,7 @@ if (!isset($errors)) {
         <form action="editGarage.php" 
               method="POST">
             <input type="hidden" name="id" value="<?php echo $id;
-       
-       ?>" />
+        ?>" />
             <table border="0">
                 <tbody>
                     <tr>
