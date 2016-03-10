@@ -27,9 +27,6 @@ if (!$row) {
     die("Illegal Request");
 }
 
-echo '<pre>';
-print_r($id);
-echo '</pre>';
 ?>
 
 <html>
@@ -43,6 +40,7 @@ echo '</pre>';
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
+        <?php require 'header.php'; ?>
         <div class="col-lg-10 col-lg-offset-1">
             <table class ="table table-striped">
                 <thead>
@@ -66,11 +64,11 @@ echo '</pre>';
                     echo '<td>' . $row['serviceDate'] . '</td>';
                     echo '<td>' . $row['garageID'] . '</td>';
                     echo '<td>'
-                    . '<a href="editBusForm.php?id=' . $row['id'] . '">Edit</a>'
+                    . '<a href="editBusForm.php?id=' . $row['id'] . '"><img src ="imgs/edit.png"></a>'
                     . '</td>';
 
                     echo '<td>'
-                    . '<a class="delete_btn" href="deleteBus.php?id=' . $row['id'] . '">Delete</a>'
+                    . '<a class="delete_btn" href="deleteBus.php?id=' . $row['id'] . '"><img src ="imgs/delete.png"></a>'
                     . '</td>';
                     echo '</tr>';
                     ?>

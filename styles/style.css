@@ -88,29 +88,25 @@ label {
     border-bottom-style: dashed;
 }
 
-.test{
-    width: 100%;
-}
-
 .navbar{
     border-radius: 0px;
     margin-top: -50px;
 
 }
 
-a{
+.wholenav a{
     color: white;
 }
-a:hover{
+.wholenav a:hover{
     color: white;
     font-weight: bold;
 }
 
 .jumbotron { 
     background-image:url('../imgs/header.png');
-    background-size: 100% 600px; 
+    background-size: 100% 550px; 
     background-repeat: no-repeat;
-    height: 600px;
+    height: 550px;
 }
 
 navbar-nav a:hover{
@@ -118,20 +114,70 @@ navbar-nav a:hover{
 }
 
 .controlpanel{
-    height: 500px;
-    margin-top: -30px;
+  font-size: 19px;
 }
-
+.italic{
+    font-style: italic;
+    font-size: 15px;
+}
 .landingheader{
     color: #0eb493;
     font-weight: bold;
 }
 
 .landnghr{
-    margin-left: 750px;
+    margin-left: 100px;
 }
 
-.T1{
-    background-color: pink;
-    height: 150px;
+.landingicons{
+    margin-top: 150px;
+    color: white;
+    font-family: 'Cantarell', sans-serif;
+    text-align: center;
+    
+}
+
+.landingicon{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.add{
+    margin-bottom: -30px;
+    color: #0eb493;
+    font-size: 1.5em;
+}
+.buslanding{
+   float: right;
+   margin-right: 270px;
+   margin-top: 5px;
+}
+
+.garagelanding{
+   float: right;
+   margin-right: 250px;
+   margin-top: 5px;
+}
+
+.driverlanding{
+   float: right;
+   margin-right: 260px;
+   margin-top: 5px;
+}
+
+.spacing{
+    height: 200px;
+    background-color: white;
+}
+
+.cntrltitle{
+    padding-top: 75px;
+}
+.hrtitle{
+    padding-bottom: 75px;
+}
+
+.dtext{
+    padding-right: 25px;
+    padding-left: 25px;
 }

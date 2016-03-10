@@ -1,21 +1,10 @@
 <?php
 require_once 'loginhelper.php';
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 require_once 'bus.php';
 require_once 'dbconnection.php';
 require_once 'busTableGateway.php';
 
 start_session();
-
-echo '<pre>';
-print_r(session_id());
-echo '</pre>';
 
 if (!is_logged_in()) {
     header("Location: loginform.php");
@@ -41,7 +30,9 @@ $statement = $gateway->getBus();
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
-        <div class="col-lg-10 col-lg-offset-1">
+        <?php require 'header.php'; ?>
+        <div class="col-lg-8 col-lg-offset-2">
+            <p class="col-lg-offset-11 add"><a href ="createBusForm.php"><img src ="imgs/add.png"></a></p>
             <table class ="table table-striped">
                 <thead>
                     <tr>
@@ -68,14 +59,14 @@ $statement = $gateway->getBus();
                         echo '<td>' . $row['serviceDate'] . '</td>';
                         echo '<td>' . $row['garageID'] . '</td>';
                         echo '<td>'
-                        . '<a href="viewBuses.php?id=' . $row['id'] . '">View</a>'
+                        . '<a href="viewBuses.php?id=' . $row['id'] . '"><img src ="imgs/view.png"></a>'
                         . '</td>';
                         echo '<td>'
-                        . '<a href="editBusForm.php?id=' . $row['id'] . '">Edit</a>'
+                        . '<a href="editBusForm.php?id=' . $row['id'] . '"><img src ="imgs/edit.png"></a>'
                         . '</td>';
 
                         echo '<td>'
-                        . '<a class="delete_btn" href="deleteBus.php?id=' . $row['id'] . '">Delete</a>'
+                        . '<a class="delete_btn" href="deleteBus.php?id=' . $row['id'] . '"><img src ="imgs/delete.png"></a>'
                         . '</td>';
                         echo '</tr>';
 
@@ -83,7 +74,7 @@ $statement = $gateway->getBus();
                     }
                     ?>
             </table>
-            <p><a href ="createBusForm.php">Add Bus</a></p>
+            
         </div>
     </body>
 </html>

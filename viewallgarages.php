@@ -6,10 +6,6 @@ require_once 'garagesTableGateway.php';
 
 start_session();
 
-echo '<pre>';
-print_r(session_id());
-echo '</pre>';
-
 if (!is_logged_in()) {
     header("Location: loginform.php");
 }
@@ -33,7 +29,9 @@ $statement = $gateway->getGarage();
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
+        <?php require 'header.php'; ?>
         <div class="col-lg-10 col-lg-offset-1">
+            <p class="col-lg-offset-11 add"><a href ="createBusForm.php"><img src ="imgs/add.png"></a></p>
             <table class ="table table-striped">
                 <thead>
                     <tr>
@@ -58,14 +56,14 @@ $statement = $gateway->getGarage();
                         echo '<td>' . $row['openinghours'] . '</td>';
                         echo '<td>' . $row['managername'] . '</td>';
                         echo '<td>'
-                        . '<a href="viewGarages.php?id=' . $row['id'] . '">View</a>'
+                        . '<a href="viewGarages.php?id=' . $row['id'] . '"><img src ="imgs/view.png"></a>'
                         . '</td>';
                         echo '<td>'
-                        . '<a href="editGarageForm.php?id=' . $row['id'] . '">Edit</a>'
+                        . '<a href="editGarageForm.php?id=' . $row['id'] . '"><img src ="imgs/edit.png"></a>'
                         . '</td>';
 
                         echo '<td>'
-                        . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '">Delete</a>'
+                        . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '"><img src ="imgs/delete.png"></a>'
                         . '</td>';
                         echo '</tr>';
 
@@ -73,7 +71,6 @@ $statement = $gateway->getGarage();
                     }
                     ?>
             </table>
-            <p><a href ="createGarageForm.php">Add Garage</a></p>
         </div>
     </body>
 </html>

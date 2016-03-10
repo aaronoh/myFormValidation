@@ -54,10 +54,10 @@ if (!$row) {
                     echo '<td>' . $row['openinghours'] . '</td>';
                     echo '<td>' . $row['managername'] . '</td>';
                     echo '<td>'
-                    . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '">Delete</a>'
+                    . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '"><img src ="imgs/delete.png"></a>'
                     . '</td>';
                     echo '<td>'
-                    . '<a href="editGarageForm.php?id=' . $row['id'] . '">Edit</a>'
+                    . '<a href="editGarageForm.php?id=' . $row['id'] . '"><img src ="imgs/edit.png"></a>'
                     . '</td>';
                     echo '</tr>';
                     ?>
