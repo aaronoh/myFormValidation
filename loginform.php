@@ -12,7 +12,8 @@
         if (isset($errorMessage))
             echo "<p>$errorMessage</p>";
         ?>
-        <div class="container">
+     
+        <div class="jumbotronlogin">
             <h1 class = "col-lg-6 col-lg-offset-1">Pilot Tours</h1>
             <form class ="col-lg-6 col-lg-offset-1 login-form form-horizontal" action="login.php" method="POST">
                 <div class="form-group">

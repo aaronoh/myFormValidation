@@ -32,6 +32,7 @@ $statement = $gateway->getBus();
         <?php require 'utils/scripts.php'; ?>
         <?php require 'header.php'; ?>
         <div class="col-lg-8 col-lg-offset-2">
+            <h1 class="gsheader col-lg-4 col-lg-offset-4">Our Buses</h1>
             <p class="col-lg-offset-11 add"><a href ="createBusForm.php"><img src ="imgs/add.png"></a></p>
             <table class ="table table-striped">
                 <thead>

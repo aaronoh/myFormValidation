@@ -30,11 +30,14 @@ $statement = $gateway->getGarage();
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
         <?php require 'header.php'; ?>
-        <div class="col-lg-10 col-lg-offset-1">
+        <div class="viewgstbl col-lg-8 col-lg-offset-2">
+            
+            <h1 class="gsheader col-lg-4 col-lg-offset-4">Our Garages</h1>
+            <!--<hr class="col-lg-3 col-lg-offset-4">-->
             <p class="col-lg-offset-11 add"><a href ="createBusForm.php"><img src ="imgs/add.png"></a></p>
             <table class ="table table-striped">
                 <thead>
-                    <tr>
+                    <tr class="gtbheadings">
                         <th>Name</th>
                         <th>Address</th>
                         <th>Email</th>

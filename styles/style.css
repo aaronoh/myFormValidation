@@ -104,9 +104,17 @@ label {
 
 .jumbotron { 
     background-image:url('../imgs/header.png');
-    background-size: 100% 550px; 
+    background-size: 100% 650px; 
     background-repeat: no-repeat;
-    height: 550px;
+    height: 650px;
+}
+
+.jumbotronlogin { 
+    background-image:url('../imgs/header.png');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    height: 700px;
+    margin-top: 120px;
 }
 
 navbar-nav a:hover{
@@ -143,7 +151,7 @@ navbar-nav a:hover{
 }
 
 .add{
-    margin-bottom: -30px;
+    margin-top: 100px;
     color: #0eb493;
     font-size: 1.5em;
 }
@@ -170,6 +178,20 @@ navbar-nav a:hover{
     background-color: white;
 }
 
+.viewgstbl{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.gsheader{
+    margin-bottom: 50px;
+    color: #0eb493;
+    font-weight: bold;
+    border-color: #eeeeee;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+}
+
 .cntrltitle{
     padding-top: 75px;
 }
@@ -177,7 +199,8 @@ navbar-nav a:hover{
     padding-bottom: 75px;
 }
 
-.dtext{
+.dt1ext{
     padding-right: 25px;
     padding-left: 25px;
 }
+

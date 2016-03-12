@@ -18,6 +18,9 @@ start_session();
       <?php  if (is_logged_in()) {
     require 'header.php';
 }
+else{
+    require 'headernonav.php';
+}
 ?>
         <div class="container">
     <div class="row">

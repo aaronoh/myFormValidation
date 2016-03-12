@@ -53,7 +53,7 @@ $user = $_SESSION['user'];
                 </div>
                 
                 <div class=" garages col-lg-4">
-                      <div class="row"><img src="imgs/garagelanding.png"><h3 class="garagelanding">Garages</h3></div>
+                    <div class="row"><a href ="viewallgarages.php"><img src ="imgs/garagelanding.png"></a><h3 class="garagelanding">Garages</h3></div>
                     <br>
                     <p class="dtext">Here you can view our garages, depending on your privileges you may also be able to
                         add or delete a garage as well as edit an individual garages current details. 
