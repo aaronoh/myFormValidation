@@ -37,7 +37,7 @@ $user = $_SESSION['user'];
 
 
                 <div class=" drivers col-lg-4 ">
-                      <div class="row"><img src="imgs/driverlanding.png"><h3 class="driverlanding">Drivers</h3></div>
+                    <div class="row"><img src="imgs/driverlanding.png"><h3 class="driverlanding">Drivers</h3></div>
                     <br>
                     <p class="dtext">Here you can view our drivers, depending on your privileges you may also be able to add or delete a
                         driver as well as edit an individual drivers current details. </p>
@@ -51,7 +51,7 @@ $user = $_SESSION['user'];
                         <span class="italic"> Please verify service changes before approving an edit.</ 
                     </p>
                 </div>
-                
+
                 <div class=" garages col-lg-4">
                     <div class="row"><a href ="viewallgarages.php"><img src ="imgs/garagelanding.png"></a><h3 class="garagelanding">Garages</h3></div>
                     <br>

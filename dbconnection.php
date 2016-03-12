@@ -9,8 +9,11 @@ class dbconnection {
             // connect to the database
             $host = "localhost";
             $database = "n00143888playground";
-            $username = "N00143888";
-            $password = "N00143888";
+//            $username = "N00143888";
+//            $password = "N00143888";
+            $username = "root";
+            $password = "";
+
 
             $dsn = "mysql:host=" . $host . ";dbname=" . $database;
             dbconnection::$dbconnection = new PDO($dsn, $username, $password);

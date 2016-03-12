@@ -1,5 +1,12 @@
-<div class="jumbotron row"> 
-    <div class="row col-lg-10 col-lg-offset-3 landingicons">
+<div class="jumbotron row">     
+    <nav class="row wholenav col-lg-12 navbar ">
+        <div class="navbar-header"><a class="navbar-brand" href ="index.php">Pilot Tours</a></div>
+        <ul class="nav navbar-nav navbar-right">
+            <li> <a href = "loginform.php">Log In</a></li>
+        </ul>
+    </nav>
+
+    <div class="col-lg-10 col-lg-offset-2 landingicons">
         <div class="hoursdriven col-lg-2">
 
             <img class="landingicon" src="imgs/hours.png">
@@ -25,4 +32,5 @@
             <h3>Luxury Coaches</h3>
         </div>
     </div>
+
 </div>

@@ -26,14 +26,12 @@ $row = $statement->fetch(PDO::FETCH_ASSOC);
 if (!$row) {
     die("Illegal Request");
 }
-
 ?>
 
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="deleteConfirm.js"></script>
     </head>

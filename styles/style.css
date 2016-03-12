@@ -104,7 +104,7 @@ label {
 
 .jumbotron { 
     background-image:url('../imgs/header.png');
-    background-size: 100% 650px; 
+    background-size: 2000px 650px; 
     background-repeat: no-repeat;
     height: 650px;
 }
@@ -122,7 +122,7 @@ navbar-nav a:hover{
 }
 
 .controlpanel{
-  font-size: 19px;
+    font-size: 19px;
 }
 .italic{
     font-style: italic;
@@ -142,7 +142,7 @@ navbar-nav a:hover{
     color: white;
     font-family: 'Cantarell', sans-serif;
     text-align: center;
-    
+
 }
 
 .landingicon{
@@ -156,21 +156,21 @@ navbar-nav a:hover{
     font-size: 1.5em;
 }
 .buslanding{
-   float: right;
-   margin-right: 270px;
-   margin-top: 5px;
+    float: right;
+    margin-right: 270px;
+    margin-top: 5px;
 }
 
 .garagelanding{
-   float: right;
-   margin-right: 250px;
-   margin-top: 5px;
+    float: right;
+    margin-right: 250px;
+    margin-top: 5px;
 }
 
 .driverlanding{
-   float: right;
-   margin-right: 260px;
-   margin-top: 5px;
+    float: right;
+    margin-right: 260px;
+    margin-top: 5px;
 }
 
 .spacing{
@@ -204,3 +204,27 @@ navbar-nav a:hover{
     padding-left: 25px;
 }
 
+.contactpanels {
+    background-color: #cccccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+
+.contactpanels table {
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+#map {
+    height: 200px;
+    margin-top: 60px;
+    margin-left: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}

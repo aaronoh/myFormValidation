@@ -1,7 +1,6 @@
 <?php
 require_once 'loginhelper.php';
 start_session();
-
 ?>
 
 <html>
@@ -15,65 +14,95 @@ start_session();
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
-      <?php  if (is_logged_in()) {
-    require 'header.php';
-}
-else{
-    require 'headernonav.php';
-}
-?>
+        <?php
+        if (is_logged_in()) {
+            require 'header.php';
+        } else {
+            require 'headernonav.php';
+        }
+        ?>
         <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well well-sm">
-                <form class="form-horizontal" method="post">
-                    <fieldset>
-                        <legend class="text-center header">Contact us</legend>
+            <div class="row">
+                <h1 class="gsheader col-lg-2 col-lg-offset-5">Contact</h1>
+            </div>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="contactpanels col-lg-2">
+                    <table>
+                        <tr>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                            </div>
-                        </div>
+                            <td class="tbtitle"> Human Resources </td>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                            </div>
-                        </div>
+                        </tr>
+                        <tr>
+                            <td class="bold"> Adam Doyle</td>
+                        </tr>
+                        <tr>
+                            <td> 01 230 1412</td>
+                        </tr>
+                        <tr>
+                            <td> adam.hr@pilot.ie</td>
+                        </tr>
+                    </table>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                            </div>
-                        </div>
+                </div>
+                <div class="contactpanels col-lg-2 col-lg-offset-1">
+                    <table>
+                        <tr>
 
-                        <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
+                            <td class="tbtitle"> Human Resources </td>
+
+                        </tr>
+                        <tr>
+                            <td class="bold"> Adam Doyle</td>
+                        </tr>
+                        <tr>
+                            <td> 01 230 1412</td>
+                        </tr>
+                        <tr>
+                            <td> adam.hr@pilot.ie</td>
+                        </tr>
+                    </table>
+
+                </div>      <div class="contactpanels col-lg-2 col-lg-offset-1">
+                    <table>
+                        <tr>
+
+                            <td class="tbtitle"> Human Resources </td>
+
+                        </tr>
+                        <tr>
+                            <td class="bold"> Adam Doyle</td>
+                        </tr>
+                        <tr>
+                            <td> 01 230 1412</td>
+                        </tr>
+                        <tr>
+                            <td> adam.hr@pilot.ie</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="contactpanels col-lg-2 col-lg-offset-1">
+                    <table>
+                        <tr>
+
+                            <td class="tbtitle"> Human Resources </td>
+
+                        </tr>
+                        <tr>
+                            <td class="bold"> Adam Doyle</td>
+                        </tr>
+                        <tr>
+                            <td> 01 230 1412</td>
+                        </tr>
+                        <tr>
+                            <td> adam.hr@pilot.ie</td>
+                        </tr>
+                    </table>
+
+                </div>
             </div>
         </div>
-    </div>
-</div>
     </body>
 </html>

@@ -75,7 +75,7 @@ $statement = $gateway->getBus();
                     }
                     ?>
             </table>
-            
+
         </div>
     </body>
 </html>
