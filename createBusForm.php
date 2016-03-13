@@ -27,7 +27,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <!--<script src="validate.js"></script>-->
+        <script src="validateBus.js"></script>
     </head>
 
     <body>
@@ -118,7 +118,7 @@ and open the template in the editor.
 
 
 
-                    <Button type="submit" class="btn btn-primary" reg="submit" value="Submit" id="submit"> Submit </button>
+                    <Button type="submit" class="btn btn-primary" name="submit" value="Submit" id="submit"> Submit </button>
 
                 </form>
             </div>

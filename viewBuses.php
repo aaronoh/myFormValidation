@@ -43,6 +43,7 @@ if (!$row) {
             <table class ="table table-striped">
                 <thead>
                     <tr>
+                        <th><a href="viewallbuses.php"><img src ="imgs/back.png"></a><th>
                         <th>Reg</th>
                         <th>Make</th>
                         <th>Model</th>
@@ -53,6 +54,9 @@ if (!$row) {
                         <th>Garage ID</th>
                     </tr>
                     <?php
+                    echo '<tr>';
+                    echo '<td>' . '</td>';
+                    echo '<td>' . '</td>';
                     echo '<td>' . $row['reg'] . '</td>';
                     echo '<td>' . $row['make'] . '</td>';
                     echo '<td>' . $row['model'] . '</td>';

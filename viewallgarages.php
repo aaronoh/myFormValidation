@@ -35,10 +35,11 @@ $statement = $gateway->getGarage();
 
                 <h1 class="gsheader col-lg-4 col-lg-offset-4">Our Garages</h1>
                 <!--<hr class="col-lg-3 col-lg-offset-4">-->
-                <p class="col-lg-offset-11 add"><a href ="createBusForm.php"><img src ="imgs/add.png"></a></p>
+                <!--<p class="col-lg-offset-11 add"><a href ="createGarageForm.php"><img src ="imgs/add.png"></a></p>-->
                 <table class ="table table-striped">
                     <thead>
                         <tr class="gtbheadings">
+                            
                             <th>Name</th>
                             <th>Address</th>
                             <th>Email</th>
@@ -46,12 +47,15 @@ $statement = $gateway->getGarage();
                             <th>Opening Date</th>
                             <th>Opening Hours</th>
                             <th>Manager Name</th>
+                            <th></th>
+                            <th></th>
+                            <th><a href="createGarageForm.php"><img src ="imgs/add.png"></a><th>
                         </tr>
                         <?php
                         $row = $statement->fetch(PDO::FETCH_ASSOC);
                         while ($row) {
 
-
+                            
                             echo '<td>' . $row['name'] . '</td>';
                             echo '<td>' . $row['address'] . '</td>';
                             echo '<td>' . $row['email'] . '</td>';
@@ -69,6 +73,7 @@ $statement = $gateway->getGarage();
                             echo '<td>'
                             . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '"><img src ="imgs/delete.png"></a>'
                             . '</td>';
+                         
                             echo '</tr>';
 
                             $row = $statement->fetch(PDO::FETCH_ASSOC);

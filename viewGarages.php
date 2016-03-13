@@ -32,10 +32,12 @@ if (!$row) {
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
+        <?php require 'header.php'; ?>
         <div class="col-lg-10 col-lg-offset-1">
             <table class ="table table-striped">
                 <thead>
                     <tr>
+                        <th><a href="viewallgarages.php"><img src ="imgs/back.png"></a><th>
                         <th>Name</th>
                         <th>Address</th>
                         <th>Email</th>
@@ -46,6 +48,8 @@ if (!$row) {
                     </tr>
                     <?php
                     echo '<tr>';
+                    echo '<td>' . '</td>';
+                    echo '<td>' . '</td>';
                     echo '<td>' . $row['name'] . '</td>';
                     echo '<td>' . $row['address'] . '</td>';
                     echo '<td>' . $row['email'] . '</td>';

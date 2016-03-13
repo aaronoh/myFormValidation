@@ -39,17 +39,13 @@ try {
         $user = $userTable->getUserByUsername($username);
 
         //check if user already registered
-        if ($user == null) {
-            $errors['username'] = "Username is not registered";
-        } else {
-            if ($password !== $user->getPassword()) {
-                $errors['password'] = "Password is incorrect";
-            }
-        }
+        if ($user == null || $password !== $user->getPassword() ) {
+            $errors['username'] = "Username or Passwrod is incorrect";
+        } 
     }
 
     if (!empty($errors)) {
-        throw new Exception("There were errors. Please fix them.");
+        throw new Exception("Error Encountered! See Below.");
     }
 
     //create new user, add to db
@@ -59,9 +55,9 @@ try {
 
     header('Location: index.php');
 } catch (Exception $ex) {
-    // if an exception occurs then extract the message
-    // from the exception and send the user the
-    // registration form
+    // if exception occurs then extract message
+    // and send the user the
+    //login form
     $errorMessage = $ex->getMessage();
     require 'loginform.php';
 }
