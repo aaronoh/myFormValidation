@@ -77,5 +77,7 @@ if (!$row) {
             </table>
 
         </div>
+        <div class="spacing"></div>
+        <?php require 'footer.php'; ?>
     </body>
 </html>

@@ -37,7 +37,7 @@ window.onload = function () {
         var purchaseDateErrorElement = document.getElementById("purchaseDateError");
         var serviceDateErrorElement = document.getElementById("serviceDateError");
         var gidErrorElement = document.getElementById("gidError");
-        
+
         //set errrors to empty string
         regErrorElement.innerHTML = "";
         makeErrorElement.innerHTML = "";
@@ -80,33 +80,32 @@ window.onload = function () {
         }
 
         if (model === "") {
-           modelErrorElement.innerHTML = "Model cannot be blank";
+            modelErrorElement.innerHTML = "Model cannot be blank";
             valid = false;
         }
-        
-         if (capacity === "") {
-           capacityErrorElement.innerHTML = "Capacity cannot be blank";
+
+        if (capacity === "") {
+            capacityErrorElement.innerHTML = "Capacity cannot be blank";
             valid = false;
         }
-        
-      
-        
+
+
+
         if (gid === "") {
-           gidErrorElement.innerHTML = "Garage ID cannot be blank";
+            gidErrorElement.innerHTML = "Garage ID cannot be blank";
             valid = false;
         }
-        
+
         if (purchaseDate === "") {
-           purchaseDateErrorElement.innerHTML = "Purchase Date cannot be blank";
+            purchaseDateErrorElement.innerHTML = "Purchase Date cannot be blank";
             valid = false;
-        }
-        else if (purchaseDate !== isValidDateFormat(purchaseDate)) {
+        } else if (purchaseDate !== isValidDateFormat(purchaseDate)) {
             purchaseDateErrorElement.innerHTML = "Invalid Date Format: YYYY-MM-DD expected.";
             valid = false;
         }
-        
+
         if (serviceDate === "") {
-           serviceDateErrorElement.innerHTML = "Service Date cannot be blank";
+            serviceDateErrorElement.innerHTML = "Service Date cannot be blank";
             valid = false;
         }
 

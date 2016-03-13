@@ -39,9 +39,9 @@ try {
         $user = $userTable->getUserByUsername($username);
 
         //check if user already registered
-        if ($user == null || $password !== $user->getPassword() ) {
+        if ($user == null || $password !== $user->getPassword()) {
             $errors['username'] = "Username or Passwrod is incorrect";
-        } 
+        }
     }
 
     if (!empty($errors)) {

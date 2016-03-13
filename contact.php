@@ -104,5 +104,6 @@ start_session();
                 </div>
             </div>
         </div>
+        <?php require 'footer.php'; ?>
     </body>
 </html>

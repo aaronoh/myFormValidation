@@ -29,26 +29,24 @@ function validate(&$formdata, &$errors) {
     if ($formdata ['model'] === NULL || $formdata ['model'] === FALSE || $formdata ['model'] === "") {
         $errors['model'] = "Model Required";
     }
-    
-       if ($formdata ['capacity'] === NULL || $formdata ['capacity'] === FALSE || $formdata ['capacity'] === "") {
+
+    if ($formdata ['capacity'] === NULL || $formdata ['capacity'] === FALSE || $formdata ['capacity'] === "") {
         $errors['capacity'] = "Capacity Required";
     }
-   
-     if ($formdata ['purchaseDate'] === NULL || $formdata ['purchaseDate'] === FALSE || $formdata ['purchaseDate'] === "") {
+
+    if ($formdata ['purchaseDate'] === NULL || $formdata ['purchaseDate'] === FALSE || $formdata ['purchaseDate'] === "") {
         $errors['purchaseDate'] = "Purchase Date Required";
-    }
-   else {
+    } else {
         $date_array = explode('-', $formdata['purchaseDate']);
         if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[2], $date_array[0])) {
             $errors['purchaseDate'] = "Invalid Date Format: YYYY-MM-DD expected.";
             print_r($date_array);
         }
     }
-    
-   if ($formdata ['serviceDate'] === NULL || $formdata ['serviceDate'] === FALSE || $formdata ['serviceDate'] === "") {
+
+    if ($formdata ['serviceDate'] === NULL || $formdata ['serviceDate'] === FALSE || $formdata ['serviceDate'] === "") {
         $errors['serviceDate'] = "Service Date Required";
-    }
-   else {
+    } else {
         $date_array = explode('-', $formdata['serviceDate']);
         if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[2], $date_array[0])) {
             $errors['serviceDate'] = "Invalid Date Format: YYYY-MM-DD expected.";
@@ -56,7 +54,7 @@ function validate(&$formdata, &$errors) {
         }
     }
 
-   if ($formdata ['gid'] === NULL || $formdata ['gid'] === FALSE || $formdata ['gid'] === "") {
+    if ($formdata ['gid'] === NULL || $formdata ['gid'] === FALSE || $formdata ['gid'] === "") {
         $errors['gid'] = "Garage ID Required";
     }
 }

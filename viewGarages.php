@@ -66,5 +66,8 @@ if (!$row) {
                     echo '</tr>';
                     ?>
             </table>
+        </div>
+        <div class="spacing"></div>
+        <?php require 'footer.php'; ?>
     </body>
 </html>

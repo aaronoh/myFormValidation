@@ -42,6 +42,7 @@
                 <p><a href="registerForm.php">Register</a></p>                
             </form>
         </div>
+        <?php require 'footer.php'; ?>
 
 
     </body>

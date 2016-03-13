@@ -39,7 +39,7 @@ $statement = $gateway->getGarage();
                 <table class ="table table-striped">
                     <thead>
                         <tr class="gtbheadings">
-                            
+
                             <th>Name</th>
                             <th>Address</th>
                             <th>Email</th>
@@ -55,7 +55,7 @@ $statement = $gateway->getGarage();
                         $row = $statement->fetch(PDO::FETCH_ASSOC);
                         while ($row) {
 
-                            
+
                             echo '<td>' . $row['name'] . '</td>';
                             echo '<td>' . $row['address'] . '</td>';
                             echo '<td>' . $row['email'] . '</td>';
@@ -73,7 +73,7 @@ $statement = $gateway->getGarage();
                             echo '<td>'
                             . '<a class="delete_btn" href="deleteGarage.php?id=' . $row['id'] . '"><img src ="imgs/delete.png"></a>'
                             . '</td>';
-                         
+
                             echo '</tr>';
 
                             $row = $statement->fetch(PDO::FETCH_ASSOC);
@@ -82,5 +82,6 @@ $statement = $gateway->getGarage();
                 </table>
             </div>
         </div>
+        <?php require 'footer.php'; ?>
     </body>
 </html>

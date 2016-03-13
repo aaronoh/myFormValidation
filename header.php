@@ -9,7 +9,7 @@
             <li> <a href = "logout.php">Log Out</a></li>
         </ul>
     </nav>
-    <div class="col-lg-10 col-lg-offset-2 landingicons">
+    <div class="col-lg-9 col-lg-offset-3 landingicons">
         <div class="hoursdriven col-lg-2">
 
             <img class="landingicon" src="imgs/hours.png">

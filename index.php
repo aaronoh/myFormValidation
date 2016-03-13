@@ -62,5 +62,7 @@ $user = $_SESSION['user'];
             </div>
         </div>
         <div class="row spacing"></div>
+        <?php require 'footer.php'; ?>
+
     </body>
 </html>

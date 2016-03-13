@@ -31,5 +31,4 @@ if (empty($errors)) {
 } else {
     require 'createBusForm.php';
 }
-
 ?>
