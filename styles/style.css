@@ -117,7 +117,7 @@ label {
     background-repeat: no-repeat;
     height: 700px;
     margin-top: 120px;
-    
+
 }
 
 navbar-nav a:hover{
@@ -249,4 +249,9 @@ navbar-nav a:hover{
 
 .fthr{
     margin-top: 40px;
+}
+
+.busesingaragestbl{
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

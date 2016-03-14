@@ -40,8 +40,8 @@ window.onload = function () {
         var phoneErrorElement = document.getElementById("phoneError");
         var openinghoursErrorElement = document.getElementById("openinghoursError");
         var openingdateErrorElement = document.getElementById("openingdateError");
-     //   var facilitiesErrorElement = document.getElementById("facilitiesError");
-       // var latenightErrorElement = document.getElementById("latenightError");
+        //   var facilitiesErrorElement = document.getElementById("facilitiesError");
+        // var latenightErrorElement = document.getElementById("latenightError");
 
         //set errrors to empty string
         nameErrorElement.innerHTML = "";
@@ -51,8 +51,8 @@ window.onload = function () {
         phoneErrorElement.innerHTML = "";
         openinghoursErrorElement.innerHTML = "";
         openingdateErrorElement.innerHTML = "";
-       // facilitiesErrorElement.innerHTML = "";
-      //  latenightErrorElement.innerHTML = "";
+        // facilitiesErrorElement.innerHTML = "";
+        //  latenightErrorElement.innerHTML = "";
 
         //input elements
         var nameField = document.getElementById('name');
@@ -62,8 +62,8 @@ window.onload = function () {
         var phoneField = document.getElementById('phone');
         var openinghoursField = document.getElementById('openinghours');
         var openingdateField = document.getElementById('openingdate');
-       // var facilitiesField = document.getElementsByName('facilities');
-   //     var latenightField = document.getElementsByName('latenight');
+        // var facilitiesField = document.getElementsByName('facilities');
+        //     var latenightField = document.getElementsByName('latenight');
 
         //set variables to value of user input 
         var name = nameField.value;

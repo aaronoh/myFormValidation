@@ -10,19 +10,19 @@ class BusTableGateway {
 
     public function getBus() {
         // execute  query to get all buses
-        
-           $sqlQuery = "SELECT b.*, g.name "
+
+        $sqlQuery = "SELECT b.*, g.name "
                 . "FROM bus b "
                 . "LEFT JOIN web_garage g ON b.garageID = g.id";
- 
-        
+
+
         //$sqlQuery = "SELECT * FROM bus";
-        
+
         $statement = $this->dbconnection->prepare($sqlQuery);
-        
-       
+
+
         $status = $statement->execute();
-         
+
         if (!$status) {
             die("Could execute query (VIEW)");
         }
@@ -43,6 +43,25 @@ class BusTableGateway {
 
         if (!$status) {
             die("Could not find bus");
+        }
+
+        return $statement;
+    }
+
+    public function getBusesByGarageId($garageID) {
+        $sqlQuery = "SELECT b.* "
+                . "FROM bus b "
+                . "WHERE b.garageID = :garageID";
+
+        $statement = $this->dbconnection->prepare($sqlQuery);
+
+        $params = array(
+            "garageID" => $garageID
+        );
+        $status = $statement->execute($params);
+
+        if (!$status) {
+            die("Could not retrieve users");
         }
 
         return $statement;
