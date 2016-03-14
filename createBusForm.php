@@ -6,6 +6,14 @@ require_once 'busTableGateway.php';
 
 require_once 'validateBus.php';
 
+start_session();
+
+if (!is_logged_in()) {
+    header("Location: loginform.php");
+}
+
+$user = $_SESSION['user'];
+
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
         echo $formdata[$fieldName];
@@ -44,6 +52,7 @@ and open the template in the editor.
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
+         <?php require 'header.php'; ?>
         <div class="conntainer">
             <h1>Create Bus Form</h1>
             <div class="col-lg-2 col-lg-offset-5">

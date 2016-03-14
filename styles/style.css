@@ -99,7 +99,7 @@ label {
 }
 .wholenav a:hover{
     color: white;
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 .jumbotron { 

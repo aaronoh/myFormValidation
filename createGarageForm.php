@@ -1,5 +1,15 @@
 <?php
+require_once 'loginhelper.php';
 require_once 'validateGarage.php';
+
+start_session();
+
+if (!is_logged_in()) {
+    header("Location: loginform.php");
+}
+
+$user = $_SESSION['user'];
+
 
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
@@ -7,15 +17,6 @@ function setValue($formdata, $fieldName) {
     }
 }
 
-function setChecked($formdata, $fieldName, $fieldValue) {
-    if (isset($formdata[$fieldName]) && isset($formdata[$fieldName])) {
-        if (is_array($formdata[$fieldName]) && in_array($fieldValue, $formdata[$fieldName])) {
-            echo 'checked = "checked"';
-        } else if ($formdata[$fieldName] == $fieldValue) {
-            echo 'checked = "checked"';
-        }
-    }
-}
 
 if (!isset($formdata)) {
     $formdata = array();
@@ -43,6 +44,7 @@ and open the template in the editor.
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
+              <?php require 'header.php'; ?>
         <div class="conntainer">
             <h1>Create Garage Form</h1>
             <div class="col-lg-2 col-lg-offset-5">
