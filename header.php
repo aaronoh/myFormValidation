@@ -1,7 +1,7 @@
-<div class="jumbotron row">     
+<div class="jumbotron">     
     <nav class="row wholenav col-lg-12 navbar ">
         <div class="navbar-header"><a class="navbar-brand" href ="index.php">Pilot Tours</a></div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right ">
             <li class ="active" > <a href = "index.php">Home</a></li>
             <li> <a href = "viewallgarages.php">Garages</a></li>
             <li> <a href = "viewallbuses.php">Buses</a></li>

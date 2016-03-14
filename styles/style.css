@@ -107,6 +107,8 @@ label {
     background-size: 2000px 650px; 
     background-repeat: no-repeat;
     height: 650px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .jumbotronlogin { 
@@ -115,6 +117,7 @@ label {
     background-repeat: no-repeat;
     height: 700px;
     margin-top: 120px;
+    
 }
 
 navbar-nav a:hover{
@@ -223,10 +226,11 @@ navbar-nav a:hover{
 
 #map {
     height: 200px;
-    margin-top: 60px;
-    margin-left: 20px;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
 }
 
 .footer{
