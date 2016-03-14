@@ -61,7 +61,7 @@ class BusTableGateway {
         $status = $statement->execute($params);
 
         if (!$status) {
-            die("Could not retrieve users");
+            die("Could not find bus");
         }
 
         return $statement;
