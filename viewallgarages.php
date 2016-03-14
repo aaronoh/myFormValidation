@@ -36,7 +36,7 @@ $statement = $gateway->getGarage();
                 <h1 class="gsheader col-lg-4 col-lg-offset-4">Our Garages</h1>
                 <!--<hr class="col-lg-3 col-lg-offset-4">-->
                 <!--<p class="col-lg-offset-11 add"><a href ="createGarageForm.php"><img src ="imgs/add.png"></a></p>-->
-                <table class ="table table-striped">
+                <table class ="col-lg-12 table table-striped">
                     <thead>
                         <tr class="gtbheadings">
 
