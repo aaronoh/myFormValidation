@@ -1,6 +1,10 @@
 <?php
+require_once 'loginhelper.php';
+require_once'dbconnection.php';
+require_once 'garagesTableGateway.php';
+require_once 'busTableGateway.php';
 
-//require_once 'validateGarage.php';
+require_once 'validateBus.php';
 
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
@@ -15,6 +19,13 @@ if (!isset($formdata)) {
 if (!isset($errors)) {
     $errors = array();
 }
+
+
+$dbconnection = dbconnection::getConnection();
+
+$garageGateway = new garageTableGateway($dbconnection);
+
+$garages = $garageGateway->getGarage();
 ?>
 <!DOCTYPE html>
 <!--
@@ -105,7 +116,13 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Garage ID" type="text" name="gid" id="gid" value="<?php setValue($formdata, 'gid'); ?>" />
+                        <select class="form-control" placeholder="Garage"  name="gid" id="gid">"> 
+                             <?php
+                                    foreach ($garages as $garage) {
+                                        echo '<option value="'.$garage['id'].'">'.$garage['name'].'</option>';
+                                    }
+                                    ?>
+                        </select>
                         <div class="error">
                             <span id="gidError">
                                 <?php if (isset($errors['gid'])) echo $errors['gid']; ?>

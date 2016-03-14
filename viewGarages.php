@@ -4,6 +4,15 @@ require_once'dbconnection.php';
 require_once 'garagesTableGateway.php';
 require_once 'busTableGateway.php';
 
+start_session();
+
+if (!is_logged_in()) {
+    header("Location: loginform.php");
+}
+
+$user = $_SESSION['user'];
+
+
 if (!isset($_GET['id'])) {
     die("Illegal Request");
 }
@@ -72,12 +81,12 @@ $buses = $busGateway->getBusesByGarageId($id);
                     echo '</tr>';
                     ?>
             </table>
-            <div class="col-lg-12 busesingaragestbl">
-                <h4>Buses Assigned to our <?php echo $garage['name']; ?> Garage</h4>
+            <div class="col-lg-10 col-lg-offset-1 busesingaragestbl">
+                <h4>Buses Assigned to our <?php echo $garage['name']; ?> Garage:</h4>
+                <br>
                 <table class ="table table-striped">
                     <thead>
                         <tr>
-                            <th><a href="viewallgarages.php"><img src ="imgs/back.png"></a><th>
                             <th>Reg</th>
                             <th>Make</th>
                             <th>Model</th>
@@ -85,14 +94,11 @@ $buses = $busGateway->getBusesByGarageId($id);
                             <th>Engine Size</th>
                             <th>Purchase Date</th>
                             <th>Service Date</th>
-                            <th>Garage ID</th>
                         </tr>
                         <?php
                         $bus = $buses->fetch(PDO::FETCH_ASSOC);
                         while ($bus) {
                             echo '<tr>';
-                            echo '<td>' . '</td>';
-                            echo '<td>' . '</td>';
                             echo '<td>' . $bus['reg'] . '</td>';
                             echo '<td>' . $bus['make'] . '</td>';
                             echo '<td>' . $bus['model'] . '</td>';
@@ -100,7 +106,9 @@ $buses = $busGateway->getBusesByGarageId($id);
                             echo '<td>' . $bus['engineSize'] . '</td>';
                             echo '<td>' . $bus['purchaseDate'] . '</td>';
                             echo '<td>' . $bus['serviceDate'] . '</td>';
-                            echo '<td>' . $bus['garageID'] . '</td>';
+                            echo '<td>'
+                            . '<a href="viewBuses.php?id=' . $bus['id'] . '"><img src ="imgs/view.png"></a>'
+                            . '</td>';
                             echo '<td>'
                             . '<a href="editBusForm.php?id=' . $bus['id'] . '"><img src ="imgs/edit.png"></a>'
                             . '</td>';
