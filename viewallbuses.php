@@ -33,7 +33,7 @@ $statement = $gateway->getBus();
         <div class="container">
             <div class="col-lg-12">
                 <h1 class="gsheader col-lg-4 col-lg-offset-4">Our Buses</h1>
-                <table class ="table table-striped">
+                <table class ="table">
                     <thead>
                         <tr>
                             <th>Reg</th>

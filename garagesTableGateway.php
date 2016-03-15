@@ -39,26 +39,25 @@ class GarageTableGateway {
 
         return $statement;
     }
-//
-//        public function getGarageByGarageId($garageID) {
-//        $sqlQuery = "SELECT g.* "
-//                . "FROM web_garage g "
-//                . "WHERE g.id = :garageID";
-//        
-//        
-//        $statement = $this->dbconnection->prepare($sqlQuery);
-//
-//        $params = array(
-//            "garageID" => $garageID
-//        );
-//        $status = $statement->execute($params);
-//
-//        if (!$status) {
-//            die("Could not retrieve users");
-//        }
-//
-//        return $statement;
-//    }
+    
+    //SELECT g.* FROM bus b LEFT JOIN web_garage g ON b.garageID = g.id WHERE b.id = :busID
+
+        public function getGarageByBusId($id) {
+        $sqlQuery = "SELECT g.* FROM bus b LEFT JOIN web_garage g ON b.garageID = g.id WHERE b.id = :id";        
+        
+        $statement = $this->dbconnection->prepare($sqlQuery);
+
+        $params = array(
+            "id" => $id
+        );
+        $status = $statement->execute($params);
+
+        if (!$status) {
+            die("Could not retrieve users");
+        }
+
+        return $statement;
+    }
     public function insertGarage($g) {
         $sqlQuery = "INSERT INTO web_garage " .
                 "(name, address, email, phone, openingdate, openinghours, managername) " .
