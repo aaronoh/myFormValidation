@@ -67,7 +67,7 @@ $statement = $gateway->getBus();
                             . '</td>';
                             echo '<td>'
                             . '<a href="editBusForm.php?id=' . $row['id'] . '">'
-                                    .'<img src ="imgs/edit_notdone.png"></a>'
+                                    .'<img src ="imgs/edit.png"></a>'
                             . '</td>';
 
                             echo '<td>'

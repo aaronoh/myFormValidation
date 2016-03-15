@@ -52,7 +52,8 @@ and open the template in the editor.
                 <form class="form-group" action="createGarage.php" method="post">
 
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Name" name="name" id="name" value="<?php setValue($formdata, 'name'); ?>" />
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="name" id="name" value="<?php setValue($formdata, 'name'); ?>" />
                         <div class="error">
                             <span id="nameError">
                                 <?php if (isset($errors['name'])) echo $errors['name']; ?>
@@ -61,7 +62,8 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" type="text"  placeholder="Address" name="address" id="address" value="<?php setValue($formdata, 'address'); ?>" />
+                        <label for="address">Address</label>
+                        <input class="form-control" type="text" name="address" id="address" value="<?php setValue($formdata, 'address'); ?>" />
                         <div class="error">
                             <span id="addressError">
                                 <?php if (isset($errors['address'])) echo $errors['address']; ?>
@@ -70,8 +72,8 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-
-                        <input class="form-control" type="email"  placeholder="Email" name="email" id="email" value="<?php setValue($formdata, 'email'); ?>" />
+<label for="email">Email</label>
+                        <input class="form-control" type="email" name="email" id="email" value="<?php setValue($formdata, 'email'); ?>" />
 
                         <div class="error">
                             <span id="emailError">
@@ -81,7 +83,8 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control"  placeholder="Phone" type="text" name="phone" id="phone" value="<?php setValue($formdata, 'phone'); ?>" />
+                        <label for="phone">Phone</label>
+                        <input class="form-control" type="text" name="phone" id="phone" value="<?php setValue($formdata, 'phone'); ?>" />
 
                         <div class="error">
                             <span id="phoneError">
@@ -90,7 +93,8 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Opening Hours"  type="text" name="openinghours" id="openinghours" value="<?php setValue($formdata, 'openinghours'); ?>" />
+                        <label for="openinghours">Opening Hours</label>
+                        <input class="form-control" type="text" name="openinghours" id="openinghours" value="<?php setValue($formdata, 'openinghours'); ?>" />
                         <div class="error">
                             <span id="openinghoursError">
                                 <?php if (isset($errors['openinghours'])) echo $errors['openinghours']; ?>
@@ -98,7 +102,8 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control"  placeholder="Opening Date     (YYYY-MM-DD)" name="openingdate" id="openingdate" value="<?php setValue($formdata, 'openingdate'); ?>" />
+                        <label for="gid">Opening Date</label>
+                        <input type="text" class="form-control"  placeholder="YYYY-MM-DD" name="openingdate" id="openingdate" value="<?php setValue($formdata, 'openingdate'); ?>" />
                         <div class="error">
                             <span id="openingdateError">
                                 <?php if (isset($errors['openingdate'])) echo $errors['openingdate']; ?>
@@ -106,7 +111,8 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Manager Name" type="text" name="managername" id="managername" value="<?php setValue($formdata, 'managername'); ?>" />
+                        <label for="managername">Manager Name</label>
+                        <input class="form-control" type="text" name="managername" id="managername" value="<?php setValue($formdata, 'managername'); ?>" />
                         <div class="error">
                             <span id="managernameError">
                                 <?php if (isset($errors['managername'])) echo $errors['managername']; ?>

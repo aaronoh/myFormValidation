@@ -110,8 +110,7 @@ $buses = $busGateway->getBusesByGarageId($id);
                             . '<a href="viewBuses.php?id=' . $bus['id'] . '"><img src ="imgs/view.png"></a>'
                             . '</td>';
                             echo '<td>'
-                            . '<img src ="imgs/edit_notdone.png"></a>'
-                            //. '<a href="editBusForm.php?id=' . $bus['id'] . '"><img src ="imgs/edit.png"></a>'
+                            . '<a href="editBusForm.php?id=' . $bus['id'] . '"><img src ="imgs/edit.png"></a>'
                             . '</td>';
 
                             echo '<td>'

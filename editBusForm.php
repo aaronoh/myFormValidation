@@ -71,6 +71,7 @@ if (!isset($errors)) {
                 ?>" />
 
                     <div class="form-group">
+                        <label for="reg">Reg</label>
                         <input class="form-control" type="text" placeholder="Reg" name="reg" id="reg" value="<?php echo $row['reg'];
                 ?>" />
                         <div class="error">
@@ -81,6 +82,7 @@ if (!isset($errors)) {
                     </div>
 
                     <div class="form-group">
+                        <label for="make">Make</label>
                         <input class="form-control" type="text"  placeholder="Make" name="make" id="make" value="<?php echo $row['make'];
                                 ?>" />
                         <div class="error">
@@ -89,9 +91,9 @@ if (!isset($errors)) {
                             </span>
                         </div>
                     </div>
-
+                    
                     <div class="form-group">
-
+                           <label for="model">Model</label> 
                         <input class="form-control" type="text"  placeholder="Model" name="model" id="model" value="<?php echo $row['model'];
                                 ?>" />
 
@@ -103,6 +105,7 @@ if (!isset($errors)) {
                     </div>
 
                     <div class="form-group">
+                        <label for="capacity">Capacity</label>
                         <input class="form-control"  placeholder="Capacity" type="number" name="capacity" id="capacity" value="<?php echo $row['capacity'];
                                 ?>" />
 
@@ -114,6 +117,7 @@ if (!isset($errors)) {
                     </div>
 
                     <div class="form-group">
+                        <label for="engineSize">Engine Size</label>
                         <input class="form-control" placeholder="Engine Size" type="text" name="engineSize" id="engineSize" value="<?php echo $row['engineSize'];
                                 ?>" />
                         <div class="error">
@@ -125,6 +129,7 @@ if (!isset($errors)) {
                     </div>
 
                     <div class="form-group">
+                        <label for="purchaseDate">Purchase Date</label>
                         <input type="text" class="form-control"  placeholder="Purchase Date    (YYYY-MM-DD)" name="purchaseDate" id="purchaseDate" value="<?php echo $row['purchaseDate'];
                                 ?>" />
                         <div class="error">
@@ -134,6 +139,7 @@ if (!isset($errors)) {
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="serviceDate">Service Date</label>
                         <input type="text" class="form-control"  placeholder="Service Date       (YYYY-MM-DD)" name="serviceDate" id="serviceDate" value="<?php echo $row['serviceDate'];
                                 ?>" />
                         <div class="error">
@@ -144,6 +150,7 @@ if (!isset($errors)) {
                     </div>
 
                     <div class="form-group">
+                        <label for="gid">Garage</label>
                         <select class="form-control" placeholder="Garage"  name="gid" id="gid">"> 
                             <?php
                             foreach ($garages as $garage) {
