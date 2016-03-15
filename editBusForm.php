@@ -91,9 +91,9 @@ if (!isset($errors)) {
                             </span>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
-                           <label for="model">Model</label> 
+                        <label for="model">Model</label> 
                         <input class="form-control" type="text"  placeholder="Model" name="model" id="model" value="<?php echo $row['model'];
                                 ?>" />
 

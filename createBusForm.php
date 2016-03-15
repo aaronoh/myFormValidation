@@ -52,7 +52,7 @@ and open the template in the editor.
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
-         <?php require 'header.php'; ?>
+        <?php require 'header.php'; ?>
         <div class="conntainer">
             <h1>Create Bus Form</h1>
             <div class="col-lg-2 col-lg-offset-5">
@@ -70,7 +70,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-                          <label for="make">Make</label>
+                        <label for="make">Make</label>
                         <input class="form-control" type="text" name="make" id="make" value="<?php setValue($formdata, 'make'); ?>" />
                         <div class="error">
                             <span id="makeError">
@@ -80,7 +80,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-<label for="model">Model</label> 
+                        <label for="model">Model</label> 
                         <input class="form-control" type="text" name="model" id="model" value="<?php setValue($formdata, 'model'); ?>" />
 
                         <div class="error">
@@ -102,7 +102,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-                            <label for="engineSize">Engine Size</label>
+                        <label for="engineSize">Engine Size</label>
                         <input class="form-control"  type="text" name="engineSize" id="engineSize" value="<?php setValue($formdata, 'engineSize'); ?>" />
                         <div class="error">
                             <span id="engineSizeError">
@@ -122,7 +122,7 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="form-group">
-                         <label for="serviceDate">Service Date</label>
+                        <label for="serviceDate">Service Date</label>
                         <input type="text" class="form-control"  placeholder="YYYY-MM-DD" name="serviceDate" id="serviceDate" value="<?php setValue($formdata, 'serviceDate'); ?>" />
                         <div class="error">
                             <span id="serviceDateError">
@@ -133,11 +133,11 @@ and open the template in the editor.
                     <div class="form-group">
                         <label for="gid">Garage</label>
                         <select class="form-control" placeholder="Garage"  name="gid" id="gid">"> 
-                             <?php
-                                    foreach ($garages as $garage) {
-                                        echo '<option value="'.$garage['id'].'">'.$garage['name'].'</option>';
-                                    }
-                                    ?>
+                            <?php
+                            foreach ($garages as $garage) {
+                                echo '<option value="' . $garage['id'] . '">' . $garage['name'] . '</option>';
+                            }
+                            ?>
                         </select>
                         <div class="error">
                             <span id="gidError">
@@ -154,9 +154,9 @@ and open the template in the editor.
                     <Button type="submit" class="btn btn-primary" name="submit" value="Submit" id="submit"> Submit </button>
 
                 </form>
-                
+
             </div>
-            
+
         </div>
 
     </body>

@@ -28,8 +28,8 @@ if (empty($errors)) {
     $gateway = new busTableGateway($dbconnection);
 
     $id = $gateway->updateBus($bus);
-    
-   
+
+
 
     header('Location: viewallbuses.php');
 } else {

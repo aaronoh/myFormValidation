@@ -116,16 +116,15 @@ class BusTableGateway {
                 "reg = :reg, " .
                 "make = :make, " .
                 "model = :model, " .
-                "phone = :phone, " .
                 "capacity = :capacity, " .
                 "engineSize = :engineSize, " .
                 "purchaseDate = :purchaseDate, " .
                 "serviceDate = :serviceDate, " .
-                "gid = :gid " .
+                "garageID = :garageID " .
                 " WHERE id = :id";
 
         $statement = $this->dbconnection->prepare($sql);
-        
+
         $params = array(
             "id" => $b->getId(),
             "reg" => $b->getReg(),
@@ -142,7 +141,6 @@ class BusTableGateway {
 
         if (!$status) {
             die("Could not update bus");
-            
         }
     }
 

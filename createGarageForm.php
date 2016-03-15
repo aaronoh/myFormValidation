@@ -10,13 +10,11 @@ if (!is_logged_in()) {
 
 $user = $_SESSION['user'];
 
-
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
         echo $formdata[$fieldName];
     }
 }
-
 
 if (!isset($formdata)) {
     $formdata = array();
@@ -44,7 +42,7 @@ and open the template in the editor.
     <body>
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
-              <?php require 'header.php'; ?>
+        <?php require 'header.php'; ?>
         <div class="conntainer">
             <h1>Create Garage Form</h1>
             <div class="col-lg-2 col-lg-offset-5">
@@ -72,7 +70,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="form-group">
-<label for="email">Email</label>
+                        <label for="email">Email</label>
                         <input class="form-control" type="email" name="email" id="email" value="<?php setValue($formdata, 'email'); ?>" />
 
                         <div class="error">
