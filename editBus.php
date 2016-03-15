@@ -8,6 +8,7 @@ require_once 'validateBus.php';
 $formdata = array();
 $errors = array();
 
+
 validate($formdata, $errors);
 if (empty($errors)) {
     $id = $_POST['id'];
@@ -27,6 +28,8 @@ if (empty($errors)) {
     $gateway = new busTableGateway($dbconnection);
 
     $id = $gateway->updateBus($bus);
+    
+   
 
     header('Location: viewallbuses.php');
 } else {

@@ -119,8 +119,8 @@ class BusTableGateway {
                 "phone = :phone, " .
                 "capacity = :capacity, " .
                 "engineSize = :engineSize, " .
-                "purchaseDate = :purchaseDate " .
-                "serviceDate = :serviceDate " .
+                "purchaseDate = :purchaseDate, " .
+                "serviceDate = :serviceDate, " .
                 "gid = :gid " .
                 " WHERE id = :id";
 
@@ -142,6 +142,7 @@ class BusTableGateway {
 
         if (!$status) {
             die("Could not update bus");
+            
         }
     }
 

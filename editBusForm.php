@@ -155,7 +155,7 @@ if (!isset($errors)) {
                             <span id="gidError">
                                 <?php
                                 foreach ($garages as $garage) {
-                                    if ($garage['id'] === $row['gid']) {
+                                    if ($garagee['id'] === $row['gid']) {
                                         $selected = 'selected';
                                     } else {
                                         $selected = '';
