@@ -49,7 +49,7 @@ and open the template in the editor.
             <h1>Create Garage Form</h1>
             <div class="col-lg-2 col-lg-offset-5">
 
-                <form class="form-horizontal" action="createGarage.php" method="post">
+                <form class="form-group" action="createGarage.php" method="post">
 
                     <div class="form-group">
                         <input class="form-control" type="text" placeholder="Name" name="name" id="name" value="<?php setValue($formdata, 'name'); ?>" />

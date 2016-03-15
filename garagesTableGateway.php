@@ -124,11 +124,6 @@ class GarageTableGateway {
             "managername" => $g->getManagerName()
         );
 
-        echo '<pre>';
-        print_r($params);
-        echo '</pre>';
-
-
         $status = $statement->execute($params);
 
         if (!$status) {

@@ -43,9 +43,9 @@ if (!$buses) {
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
         <?php require 'header.php'; ?>
-        <div class="container">
-        <div class="col-lg-12 col-lg-offset-1">
-            <table class ="table table-striped">
+        <div class="col-lg-10 col-lg-offset-1">
+
+            <table class ="table table-striped col-lg-12">
                 <thead>
                     <tr>
 
@@ -82,50 +82,49 @@ if (!$buses) {
                     echo '</tr>';
                     ?>
             </table>
-        </div>
-            <?php $garage = $garages->fetch(PDO::FETCH_ASSOC);?>
-            <h4>This bus is assigned to our <?php echo $garage['name']; ?> Garage:</h4>
-            <table class ="table table-striped">
-                <thead>
-                    <tr>
-                        <th><a href="viewallgarages.php"><img src ="imgs/back.png"></a><th>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Opening Date</th>
-                        <th>Opening Hours</th>
-                        <th>Manager Name</th>
-                    </tr>
-                    <?php
-                    
-                    while ($garage) {
-                        echo '<tr>';
-                        echo '<td>' . '</td>';
-                        echo '<td>' . '</td>';
-                        echo '<td>' . $garage['name'] . '</td>';
-                        echo '<td>' . $garage['address'] . '</td>';
-                        echo '<td>' . $garage['email'] . '</td>';
-                        echo '<td>' . $garage['phone'] . '</td>';
-                        echo '<td>' . $garage['openingdate'] . '</td>';
-                        echo '<td>' . $garage['openinghours'] . '</td>';
-                        echo '<td>' . $garage['managername'] . '</td>';
-                        echo '<td>'
-                        . '<a href="editGarageForm.php?id=' . $garage['id'] . '"><img src ="imgs/edit.png"></a>'
-                        . '</td>';
-                        echo '<td>'
-                        . '<a class="delete_btn" href="deleteGarage.php?id=' . $garage['id'] . '"><img src ="imgs/delete.png"></a>'
-                        . '</td>';
 
-                        echo '</tr>';
-                        $garage = $garages->fetch(PDO::FETCH_ASSOC);
-                    }
-                    ?>
-            </table>
+            <div class="col-lg-10 col-lg-offset-1 busesingaragestbl">
+                <?php $garage = $garages->fetch(PDO::FETCH_ASSOC); ?>
+                <h4>This bus is assigned to our <?php echo $garage['name']; ?> Garage:</h4>
+                <table class ="table table-striped col-lg-8">
+                    <thead>
+                        <tr>
+                            <th><a href="viewallgarages.php"><img src ="imgs/back.png"></a><th>
+                            <th>Address</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Manager Name</th>
+                        </tr>
+                        <?php
+                        while ($garage) {
+                            echo '<tr>';
+                            echo '<td>' . '</td>';
+                            echo '<td>' . '</td>';
+                            echo '<td>' . $garage['address'] . '</td>';
+                            echo '<td>' . $garage['email'] . '</td>';
+                            echo '<td>' . $garage['phone'] . '</td>';
+                            echo '<td>' . $garage['managername'] . '</td>';
+                            echo '<td>'
+                            . '<a href="viewGarages.php?id=' . $garage['id'] . '"><img src ="imgs/view.png"></a>'
+                            . '</td>';
+                            echo '<td>'
+                            . '<a href="editGarageForm.php?id=' . $garage['id'] . '"><img src ="imgs/edit.png"></a>'
+                            . '</td>';
+                            echo '<td>'
+                            . '<a class="delete_btn" href="deleteGarage.php?id=' . $garage['id'] . '"><img src ="imgs/delete.png"></a>'
+                            . '</td>';
 
+                            echo '</tr>';
+                            $garage = $garages->fetch(PDO::FETCH_ASSOC);
+                        }
+                        ?>
+                </table>
+            </div>
         </div>
-        </div>
-        <div class="spacing"></div>
-<?php require 'footer.php'; ?>
-    </body>
+    </div>
+
+
+    <div class="spacing"></div>
+    <?php require 'footer.php'; ?>
+</body>
 </html>
