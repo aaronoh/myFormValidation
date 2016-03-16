@@ -35,14 +35,6 @@ $user = $_SESSION['user'];
             <div class="row"></div>
             <div class="row controlpanel">
 
-
-                <div class=" drivers col-lg-4 ">
-                    <div class="row"><img src="imgs/driverlanding.png"><h3 class="driverlanding">Drivers</h3></div>
-                    <br>
-                    <p class="dtext">Here you can view our drivers, depending on your privileges you may also be able to add or delete a
-                        driver as well as edit an individual drivers current details. </p>
-                    </p>
-                </div>
                 <div class=" buses col-lg-4">
                     <div class="row"><a href ="viewallbuses.php"><img src ="imgs/buslanding.png"></a><h3 class="buslanding">Buses</h3></div>
                     <br>
@@ -57,6 +49,16 @@ $user = $_SESSION['user'];
                     <br>
                     <p class="dtext">Here you can view our garages, depending on your privileges you may also be able to
                         add or delete a garage as well as edit an individual garages current details. 
+                    </p>
+                </div>
+
+
+
+                <div class=" drivers col-lg-4 ">
+                    <div class="row"><img src="imgs/driverlanding.png"><h3 class="driverlanding">Drivers</h3></div>
+                    <br>
+                    <p class="dtext">Here you can view our drivers, depending on your privileges you may also be able to add or delete a
+                        driver as well as edit an individual drivers current details. </p>
                     </p>
                 </div>
             </div>
