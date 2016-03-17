@@ -41,8 +41,8 @@
                             <span class="errorlog">
                                 <?php if (isset($errors['password'])) echo $errors['password']; ?>
                             </span>
-                            
-                              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password"
                                    class="contactform"
                                    name="password2"

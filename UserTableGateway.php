@@ -14,13 +14,12 @@ class UserTable {
         if (!isset($user)) {
             throw new Exception("User required");
         }
-        $sql = "INSERT INTO users(username, password, role) "
-                . "VALUES (:username, :password, :role)";
+        $sql = "INSERT INTO users(username, password) "
+                . "VALUES (:username, :password)";
 
         $params = array(
             'username' => $user->getUsername(),
-            'password' => $user->getPassword(),
-            'role' => $user->getRole()
+            'password' => $user->getPassword()
         );
         $stmt = $this->link->prepare($sql);
         $status = $stmt->execute($params);
@@ -49,8 +48,7 @@ class UserTable {
             $row = $stmt->fetch();
             $username = $row['username'];
             $pwd = $row['password'];
-            $role = $row['role'];
-            $user = new User($id, $username, $pwd, $role);
+            $user = new User($id, $username, $pwd);
         }
         return $user;
     }
@@ -70,8 +68,7 @@ class UserTable {
             $id = $row['id'];
             $username = $row['username'];
             $pwd = $row['password'];
-            $role = $row['role'];
-            $user = new User($id, $username, $pwd, $role);
+            $user = new User($id, $username, $pwd);
             $users[$id] = $user;
 
             $row = $stmt->fetch();
@@ -93,8 +90,7 @@ class UserTable {
             $row = $stmt->fetch();
             $id = $row['id'];
             $pwd = $row['password'];
-            $role = $row['role'];
-            $user = new User($id, $username, $pwd, $role);
+            $user = new User($id, $username, $pwd);
         }
         return $user;
     }
