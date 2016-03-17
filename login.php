@@ -45,7 +45,7 @@ try {
     }
 
     if (!empty($errors)) {
-        throw new Exception("Error Encountered! See Below.");
+        throw new Exception();
     }
 
     //create new user, add to db

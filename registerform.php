@@ -1,50 +1,67 @@
+<!DOCTYPE HTML>
 <html>
     <head>
-        <meta content="text/html; charset=UTF-8">
-        <title></title>
-        <?php require 'utils/styles.php'; ?>
-        <?php require 'utils/scripts.php'; ?>
+        <title>Log In</title>
     </head>
     <body>
+        <?php require 'utils/styles.php'; ?>
+        <?php require 'utils/scripts.php'; ?>
 
-        <h2>Register Form</h2>
         <?php
         if (isset($errorMessage))
             echo "<p>$errorMessage</p>";
         ?>
-        <form action="register.php" method="POST">
-            <label for="username">Username: </label>
-            <input type="text"
-                   id="username"
-                   name="username"
-                   value="<?php if (isset($username)) echo $username; ?>"
-                   />
-            <span class="error">
-                <?php if (isset($errors['username'])) echo $errors['username']; ?>
-            </span>
-            <br/>
-            <label for="password">Password: </label>
-            <input type="password"
-                   id="password"
-                   name="password"
-                   value=""
-                   />
-            <span class="error">
-                <?php if (isset($errors['password'])) echo $errors['password']; ?>
-            </span>
-            <label for="password2">Password: </label>
-            <input type="password"
-                   id="password2"
-                   name="password2"
-                   value=""
-                   />
-            <span class="error">
-                <?php if (isset($errors['password2'])) echo $errors['password2']; ?>
-            </span>
-            <br/>
-            <input type="submit" value="Register" />
-            <p><a href="loginForm.php">Login</a></p>
-        </form>
+
+        <div class="jumbotronlogin">
+
+
+            <div class="clearfix"></div>
+            <div class="regform">
+                <h1 class = " loginheader col-lg-2 col-lg-offset-5">Pilot Tours</h1>
+                <div class="login col-lg-2 col-lg-offset-5">
+                    <form action="register.php" method="POST">
+                        <div class="form-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>   
+                            <input type="text"
+                                   class="contactform"
+                                   name="username"
+                                   placeholder="Username"
+                                   value="<?php if (isset($username)) echo $username; ?>"
+                                   />
+                            <span class="errorlog">
+                                <?php if (isset($errors['username'])) echo $errors['username']; ?>
+                            </span>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password"
+                                   class="contactform"
+                                   name="password"
+                                   placeholder="Password"
+                                   value=""
+                                   />
+                            <span class="errorlog">
+                                <?php if (isset($errors['password'])) echo $errors['password']; ?>
+                            </span>
+                            
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password"
+                                   class="contactform"
+                                   name="password2"
+                                   placeholder="Confirm Password"
+                                   value=""
+                                   />
+                            <span class="errorlog">
+                                <?php if (isset($errors['password2'])) echo $errors['password2']; ?>
+                            </span>
+                        </div>
+
+                        <input type="submit"class = "login-btnspcing form-btn" value="Register" />
+                        <p class="col-lg-1 col-lg-offset-9 register"><a href="loginForm.php">LogIn</a></p>                
+                    </form>
+                </div>
+            </div>
+        </div>
+        <?php require 'footer.php'; ?>
+
 
     </body>
 </html>

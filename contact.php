@@ -100,8 +100,9 @@ start_session();
                 <div class="col-lg-6">
                     <textarea   class="contactform textarea"  placeholder="Message"></textarea>
                 </div>
-                <div class="  col-lg-1 col-lg-offset-5">
-                    <button type="submit"   class="form-btn">Send Message</button> 
+                <div class="clearfix"></div>
+                <div class="col-lg-2 col-lg-offset-5 ">
+                    <button type="submit"   class="form-btnspcing form-btn">Send Message</button> 
                 </div>
             </form>
         </div>
