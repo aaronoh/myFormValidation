@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Log In</title>
+        <script src="validateLogIn.js"></script>
     </head>
     <body>
         <?php require 'utils/styles.php'; ?>
@@ -25,25 +26,27 @@
                             <input type="text"
                                    class="contactform"
                                    name="username"
+                                   id ="username"
                                    placeholder="Username"
                                    value="<?php if (isset($formdata['username'])) echo $formdata['username']; ?>"
                                    />
-                            <span class="errorlog">
+                            <span id = "usernameError" class="errorlog">
                                 <?php if (isset($errors['username'])) echo $errors['username']; ?>
                             </span>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password"
                                    class="contactform"
+                                   id ="password"
                                    name="password"
                                    placeholder="Password"
                                    value=""
                                    />
-                            <span class="errorlog">
+                            <span id = "passwordError" class="errorlog">
                                 <?php if (isset($errors['password'])) echo $errors['password']; ?>
                             </span>
                         </div>
 
-                        <input type="submit"class = "login-btnspcing form-btn" value="Login" />
+                        <input type="submit"class = "login-btnspcing form-btn" id ="Login" value="Login" />
                         <p class="col-lg-1 col-lg-offset-9 register"><a href="registerForm.php">Register</a></p>                
                     </form>
                 </div>

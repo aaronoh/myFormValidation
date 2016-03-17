@@ -36,7 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         die("Illegal request");
     }
     $id = $_POST['id'];
-
+    $dbconnection = dbconnection::getConnection();
+    $garageGateway = new garageTableGateway($dbconnection);
+    $garages = $garageGateway->getGarage();
     $row = $formdata;
 } else {
     die("Illegal request");
@@ -166,8 +168,7 @@ if (!isset($errors)) {
                         </select>
                         <div class="error">
                             <span id="gidError">
-                               
-
+                            <?php if (isset($errors['gid'])) echo $errors['gid']; ?>
                             </span>
                         </div>
                     </div>

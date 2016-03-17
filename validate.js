@@ -40,8 +40,7 @@ window.onload = function () {
         var phoneErrorElement = document.getElementById("phoneError");
         var openinghoursErrorElement = document.getElementById("openinghoursError");
         var openingdateErrorElement = document.getElementById("openingdateError");
-        //   var facilitiesErrorElement = document.getElementById("facilitiesError");
-        // var latenightErrorElement = document.getElementById("latenightError");
+
 
         //set errrors to empty string
         nameErrorElement.innerHTML = "";
@@ -51,8 +50,6 @@ window.onload = function () {
         phoneErrorElement.innerHTML = "";
         openinghoursErrorElement.innerHTML = "";
         openingdateErrorElement.innerHTML = "";
-        // facilitiesErrorElement.innerHTML = "";
-        //  latenightErrorElement.innerHTML = "";
 
         //input elements
         var nameField = document.getElementById('name');
@@ -62,8 +59,7 @@ window.onload = function () {
         var phoneField = document.getElementById('phone');
         var openinghoursField = document.getElementById('openinghours');
         var openingdateField = document.getElementById('openingdate');
-        // var facilitiesField = document.getElementsByName('facilities');
-        //     var latenightField = document.getElementsByName('latenight');
+
 
         //set variables to value of user input 
         var name = nameField.value;
@@ -73,8 +69,7 @@ window.onload = function () {
         var phone = phoneField.value;
         var openinghours = openinghoursField.value;
         var openingdate = openingdateField.value;
-//        var facilities = facilitiesField.value;
-//        var latenight = latenightField.value;
+
 
         //name, manager name and address are required
         if (name === "") {
@@ -104,19 +99,13 @@ window.onload = function () {
             emailErrorElement.innerHTML = "Please enter a valid email";
             valid = false;
         }
+        
+              if (phone === "") {
+            phoneErrorElement.innerHTML = "Phone number cannot be blank";
+            valid = false;
+        }
 
-//        var latenightselected = false;
-//        for (var i = 0; i !== latenightField.length; i++) {
-//            if (latenightField[i].checked) {
-//                latenightselected = true;
-//                break;
-//            }
-//        }
-//
-//        if (!latenightselected) {
-//            latenightErrorElement.innerHTML = "Choose an option";
-//            valid = false;
-//        }
+
 
         //if not valid don't submit form 
         if (!valid) {

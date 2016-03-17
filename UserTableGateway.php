@@ -76,6 +76,7 @@ class UserTable {
         return $users;
     }
 
+    //retrieve row(s) in database based on username, used to log in
     public function getUserByUsername($username) {
         $sql = "SELECT * FROM users WHERE username = :username";
         $params = array('username' => $username);
