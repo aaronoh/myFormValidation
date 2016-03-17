@@ -193,11 +193,6 @@ navbar-nav a:hover{
     background-color: white;
 }
 
-.viewgstbl{
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
-
 .gsheader{
     margin-bottom: 50px;
     color: #0eb493;
@@ -205,12 +200,9 @@ navbar-nav a:hover{
     border-color: #eeeeee;
     border-style: solid;
     border-width: 0px 0px 1px 0px;
-}
-
-.cntrltitle{
-    padding-top: 75px;
     text-align: center;
 }
+
 .hrtitle{
     padding-bottom: 75px;
 }
@@ -347,10 +339,17 @@ navbar-nav a:hover{
 .loginheader{
     color: white;
     font-size: 50px;
-
     border-color: white;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
+}
+
+.editheader{
+    border-color: #0eb493;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+      padding: 15px;
+      margin-bottom: 30px;
 }
 
 .logbg{

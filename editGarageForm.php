@@ -49,90 +49,107 @@ if (!isset($errors)) {
         <title></title>
     </head>
     <body>
-        <h1>Edit Garage Form</h1>
-        <?php
-        if (isset($errorMessage)) {
-            echo '<p>Error: ' . $errorMessage . '</p>';
-        }
-        ?>        
-        <form action="editGarage.php" 
-              method="POST">
-            <input type="hidden" name="id" value="<?php echo $id;
-        ?>" />
-            <table border="0">
-                <tbody>
-                    <tr>
-                        <td>Name: </td>
-                        <td>
-                            <input type="text" name="name" value="<?php echo $row['name']; ?>" />
-                            <span id="nameError" class="error">
-                                <?php echoValue($errors, 'name'); ?>
-                            </span>
-                        </td>
-                    </tr>
 
-                    <tr>
-                        <td>Address: </td>
-                        <td>
-                            <input type="text" name="address" value="<?php echo $row['address']; ?>" />
-                            <span id="addressError" class="error">
-                                <?php echoValue($errors, 'address'); ?>
-                            </span>
-                        </td>
-                    </tr>
+        <?php require 'utils/styles.php'; ?>
+        <?php require 'utils/scripts.php'; ?>
+        <?php require 'header.php'; ?>
+        <div class="conntainer">
+            <div class="col-lg-3 col-lg-offset-4">
+                <h1 class="editheader">Edit Garage Form</h1>
+                <?php
+                if (isset($errorMessage)) {
+                    echo '<p>Error: ' . $errorMessage . '</p>';
+                }
+                ?>   
+                <form action="editGarage.php" 
+                      method="POST" class="form-group">
+                    <input type="hidden" name="id" value="<?php echo $id;
+                ?>" />
 
-                    <tr>
-                        <td>eMail: </td>        
-                        <td>
-                            <input type="email" name="email" value="<?php echo $row['email']; ?>" />
-                            <span id="emailError" class="error">
-                                <?php echoValue($errors, 'email'); ?>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" placeholder="Name" name="name" id="name" value="<?php echo $row['name'];
+                ?>" />
+                        <div class="error">
+                            <span id="nameError">
+                                <?php if (isset($errors['name'])) echo $errors['name']; ?>
                             </span>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
 
-                    <tr>
-                        <td>Phone: </td>
-                        <td>
-                            <input type="text" name="phone" value="<?php echo $row['phone']; ?>" />
-                            <span id="phoneError" class="error">
-                                <?php echoValue($errors, 'phone'); ?>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input class="form-control" type="text"  placeholder="Address" name="address" id="address" value="<?php echo $row['address'];
+                                ?>" />
+                        <div class="error">
+                            <span id="addressError">
+                                <?php if (isset($errors['address'])) echo $errors['address']; ?>
                             </span>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
 
-                    <tr>
-                        <td>Opening Hours: </td>
-                        <td>
-                            <input type="text" name="openinghours" value="<?php echo $row['openinghours']; ?>" />
-                            <span id="openinghoursError" class="error">
-                                <?php echoValue($errors, 'openinghours'); ?>
+                    <div class="form-group">
+                        <label for="email">Email</label> 
+                        <input class="form-control" type="text"  placeholder="Email" name="email" id="email" value="<?php echo $row['email'];
+                                ?>" />
+
+                        <div class="error">
+                            <span id="emailError">
+                                <?php if (isset($errors['email'])) echo $errors['email']; ?>
                             </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Opening Date: </td>
-                        <td>
-                            <input type="text" name="openingdate" value="<?php echo $row['openingdate']; ?>" />
-                            <span id="openingdateError" class="error">
-                                <?php echoValue($errors, 'openingdate'); ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input class="form-control"  placeholder="Phone" type="text" name="phone" id="phone" value="<?php echo $row['phone'];
+                                ?>" />
+
+                        <div class="error">
+                            <span id="phoneError">
+                                <?php if (isset($errors['phone'])) echo $errors['phone']; ?>
                             </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Manager Name: </td>
-                        <td>
-                            <input type="text" name="managername" value="<?php echo $row['managername']; ?>" />
-                            <span id="managernameError" class="error">
-                                <?php echoValue($errors, 'managername'); ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="openinghours">Opening Hours</label>
+                        <input class="form-control" placeholder="Opening Hours" type="text" name="openinghours" id="openinghours" value="<?php echo $row['openinghours'];
+                                ?>" />
+                        <div class="error">
+                            <span id="openinghoursError">
+                                <?php if (isset($errors['openinghours'])) echo $errors['openinghours']; ?>
+
                             </span>
-                        </td>
-                    </tr>   
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="submit" value="Update Garage" name="editGarage" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="openingdate">Opening Date</label>
+                        <input type="text" class="form-control"  placeholder="(YYYY-MM-DD)" name="openingdate" id="openingdate" value="<?php echo $row['openingdate'];
+                                ?>" />
+                        <div class="error">
+                            <span id="openingdateError">
+                                <?php if (isset($errors['openingdate'])) echo $errors['openingdate']; ?>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="managername">Manager Name</label>
+                        <input type="text" class="form-control"  placeholder="Manager Name" name="managername" id="managername" value="<?php echo $row['managername'];
+                                ?>" />
+                        <div class="error">
+                            <span id="managernameError">
+                                <?php if (isset($errors['managername'])) echo $errors['managername']; ?>
+                            </span>
+                        </div>
+                    </div>
+                    <Button type="submit" class="form-btnspcing form-btn" name="submit" value="Submit" id="submit"> Submit </button>
+
+                </form>
+            </div>
+        </div>
+
+    </body>
+
+</html>

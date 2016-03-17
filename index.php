@@ -26,11 +26,8 @@ $user = $_SESSION['user'];
         <?php require 'header.php'; ?><!-- Requires header.php to generate the code for the header !-->
 
         <div class="container">
-            <div class="row col-lg-3 col-lg-offset-5 cntrltitle">
-                <h2 class="landingheader">Control Panel</h2>
-            </div>
-            <div class="row col-lg-3 col-lg-offset-5 hrtitle">
-                <hr>
+            <div class="row hrtitle col-lg-3 col-lg-offset-5 ">
+                <h2 class="gsheader">Control Panel</h2>
             </div>
             <div class="row"></div>
             <div class="row controlpanel ">

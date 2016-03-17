@@ -3,7 +3,7 @@ function initialize() {
     var mapOptions = {
         //Zoom level 
         zoom: 14,
-        // The latitude and longitude to center the map 
+        // The latitude and longitude of the desired centre of center the map 
         center: new google.maps.LatLng(53.2803, -6.1529), // IADT
 
         //styling
@@ -201,7 +201,7 @@ function initialize() {
     });
     marker.addListener('click', toggleBounce);
 
-
+//onClick bounce animation
     function toggleBounce() {
         if (marker.getAnimation() !== null) {
             marker.setAnimation(null);
@@ -210,5 +210,5 @@ function initialize() {
         }
     }
 }
-
+// Initialize map
 google.maps.event.addDomListener(window, 'load', initialize);

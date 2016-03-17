@@ -44,7 +44,7 @@ and open the template in the editor.
         <?php require 'utils/scripts.php'; ?>
         <?php require 'header.php'; ?>
         <div class="conntainer">
-            <h1>Create Garage Form</h1>
+             <h1 class="editheader col-lg-3 col-lg-offset-5">Create Garage Form</h1>
             <div class="col-lg-2 col-lg-offset-5">
 
                 <form class="form-group" action="createGarage.php" method="post">
@@ -123,7 +123,7 @@ and open the template in the editor.
 
 
 
-                    <Button type="submit" class="btn btn-primary" name="submit" value="Submit" id="submit"> Submit </button>
+                    <Button type="submit" class="form-btnspcing form-btn" name="submit" value="Submit" id="submit"> Submit </button>
 
                 </form>
             </div>

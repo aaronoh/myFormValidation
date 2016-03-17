@@ -59,7 +59,7 @@ if (!isset($errors)) {
         <?php require 'header.php'; ?>
         <div class="conntainer">
             <div class="col-lg-2 col-lg-offset-5">
-                <h1>Edit Bus Form</h1>
+                <h1 class="editheader">Edit Bus Form</h1>
                 <?php
                 if (isset($errorMessage)) {
                     echo '<p>Error: ' . $errorMessage . '</p>';
@@ -179,7 +179,7 @@ if (!isset($errors)) {
 
 
 
-                    <Button type="submit" class="btn btn-primary" name="submit" value="Submit" id="submit"> Submit </button>
+                    <Button type="submit" class="form-btnspcing form-btn" name="submit" value="Submit" id="submit"> Submit </button>
 
                 </form>
             </div>

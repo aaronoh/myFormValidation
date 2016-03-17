@@ -32,7 +32,7 @@ $statement = $gateway->getBus();
         <?php require 'header.php'; ?>
         <div class="container">
             <div class="col-lg-12">
-                <h1 class="gsheader col-lg-4 col-lg-offset-4">Our Buses</h1>
+                <h1 class="gsheader col-lg-3 col-lg-offset-5">Our Buses</h1>
                 <table class ="table">
                     <thead>
                         <tr>
