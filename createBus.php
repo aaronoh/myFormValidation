@@ -7,9 +7,9 @@ require_once 'validateBus.php';
 
 $formdata = array();
 $errors = array();
-
+//validate the data entered using the validate function in the validateBus.php file
 validate($formdata, $errors);
-
+//if the validation is passed (errors array empty) set each variable to the valuye of the coresponding variable in the formdata array
 if (empty($errors)) {
     $reg = $formdata['reg'];
     $make = $formdata['make'];

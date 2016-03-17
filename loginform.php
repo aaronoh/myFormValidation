@@ -47,7 +47,9 @@
                         </div>
 
                         <input type="submit"class = "login-btnspcing form-btn" id ="Login" value="Login" />
-                        <p class="col-lg-1 col-lg-offset-9 register"><a href="registerForm.php">Register</a></p>                
+                        <p class="col-lg-1 register"><a href="contact.php">Help</a></p>  
+                        <p class="col-lg-1 col-lg-offset-8 register"><a href="registerForm.php">Register</a></p>
+                        
                     </form>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <?php
-
+//used to comunicate with the users table in the database
 require_once 'user.php';
 
 class UserTable {
@@ -9,7 +9,7 @@ class UserTable {
     public function __construct($connection) {
         $this->link = $connection;
     }
-
+    //add a row to users table, used to register
     public function insert($user) {
         if (!isset($user)) {
             throw new Exception("User required");
@@ -32,7 +32,7 @@ class UserTable {
 
         return $id;
     }
-
+      //retrieve row in users table based on id
     public function getUserById($id) {
         $sql = "SELECT * FROM users WHERE id = :id";
         $params = array('id' => $id);
@@ -52,7 +52,7 @@ class UserTable {
         }
         return $user;
     }
-
+    //retrieve all rows in users table
     public function getUsers() {
         $sql = "SELECT * FROM users";
         $stmt = $this->link->prepare($sql);
@@ -76,7 +76,7 @@ class UserTable {
         return $users;
     }
 
-    //retrieve row(s) in database based on username, used to log in
+    //retrieve row in users table based on username, used to log in
     public function getUserByUsername($username) {
         $sql = "SELECT * FROM users WHERE username = :username";
         $params = array('username' => $username);

@@ -1,5 +1,5 @@
 <?php
-
+//used to comunicate with the garages table in the database
 class GarageTableGateway {
 
     private $dbconnection;
@@ -9,7 +9,7 @@ class GarageTableGateway {
     }
 
     public function getGarage() {
-        // execute  query to get all garages
+        // sql  query to get all garages
         $sqlQuery = "SELECT * FROM web_garage";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
@@ -23,7 +23,7 @@ class GarageTableGateway {
     }
 
     public function getGarageById($id) {
-        // execute  query to get bus with the requested id
+        // sql  query to get bus with the requested id
         $sqlQuery = "SELECT * FROM web_garage WHERE id = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
@@ -40,9 +40,10 @@ class GarageTableGateway {
         return $statement;
     }
 
-    //SELECT g.* FROM bus b LEFT JOIN web_garage g ON b.garageID = g.id WHERE b.id = :busID
-
+  
+    
     public function getGarageByBusId($id) {
+        //query to return the full row from the garages table based on the garageID of the bus
         $sqlQuery = "SELECT g.* FROM bus b LEFT JOIN web_garage g ON b.garageID = g.id WHERE b.id = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
@@ -60,6 +61,7 @@ class GarageTableGateway {
     }
 
     public function insertGarage($g) {
+        //query to add a garage to the garages table
         $sqlQuery = "INSERT INTO web_garage " .
                 "(name, address, email, phone, openingdate, openinghours, managername) " .
                 "VALUES (:name, :address, :email, :phone, :openingdate, :openinghours, :managername)";
@@ -86,6 +88,7 @@ class GarageTableGateway {
     }
 
     public function deleteGarage($id) {
+        //query to delete a garage from the garages table
         $sqlQuery = "DELETE FROM web_garage WHERE id = :id";
 
         $statement = $this->dbconnection->prepare($sqlQuery);
@@ -103,6 +106,7 @@ class GarageTableGateway {
     }
 
     public function update($g) {
+        //query to update a garage in the garages table
         $sql = "UPDATE web_garage SET " .
                 "name = :name, " .
                 "address = :address, " .
