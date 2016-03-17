@@ -11,13 +11,13 @@ $errors = array();
 validate($formdata, $errors);
 
 if (empty($errors)) {
-    $name = $_POST['name'];
-    $managername = $_POST['managername'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $openinghours = $_POST['openinghours'];
-    $openingdate = $_POST['openingdate'];
+    $name = $formdata['name'];
+    $managername = $formdata['managername'];
+    $address = $formdata['address'];
+    $email = $formdata['email'];
+    $phone = $formdata['phone'];
+    $openinghours = $formdata['openinghours'];
+    $openingdate = $formdata['openingdate'];
 
     $garage = new Garage(-1, $name, $address, $email, $phone, $openingdate, $openinghours, $managername);
 

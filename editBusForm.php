@@ -51,6 +51,7 @@ if (!isset($errors)) {
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <script src="validateBus.js"></script>
     </head>
     <body>
 

@@ -46,6 +46,7 @@ if (!isset($errors)) {
 <html>
     <head>
         <meta charset="UTF-8">
+        <script src="validate.js"></script>
         <title></title>
     </head>
     <body>

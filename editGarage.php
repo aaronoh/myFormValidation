@@ -4,21 +4,28 @@ require_once 'garage.php';
 require_once 'garagesTableGateway.php';
 require_once 'dbconnection.php';
 require_once 'validateGarage.php';
+require_once 'loginhelper.php';
 
 $formdata = array();
 $errors = array();
+
+start_session();
+
+if (!is_logged_in()) {
+    header("Location: login_form.php");
+}
 
 validate($formdata, $errors);
 
 if (empty($errors)) {
     $id = $_POST['id'];
-    $name = $_POST['name'];
-    $managername = $_POST['managername'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $openinghours = $_POST['openinghours'];
-    $openingdate = $_POST['openingdate'];
+    $name = $formdata['name'];
+    $managername = $formdata['managername'];
+    $address = $formdata['address'];
+    $email = $formdata['email'];
+    $phone = $formdata['phone'];
+    $openinghours = $formdata['openinghours'];
+    $openingdate = $formdata['openingdate'];
 
     $garage = new Garage($id, $name, $address, $email, $phone, $openingdate, $openinghours, $managername);
 

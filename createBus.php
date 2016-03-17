@@ -9,15 +9,16 @@ $formdata = array();
 $errors = array();
 
 validate($formdata, $errors);
+
 if (empty($errors)) {
-    $reg = $_POST['reg'];
-    $make = $_POST['make'];
-    $model = $_POST['model'];
-    $capacity = $_POST['capacity'];
-    $engineSize = $_POST['engineSize'];
-    $purchaseDate = $_POST['purchaseDate'];
-    $serviceDate = $_POST['serviceDate'];
-    $gid = $_POST['gid'];
+    $reg = $formdata['reg'];
+    $make = $formdata['make'];
+    $model = $formdata['model'];
+    $capacity = $formdata['capacity'];
+    $engineSize = $formdata['engineSize'];
+    $purchaseDate = $formdata['purchaseDate'];
+    $serviceDate = $formdata['serviceDate'];
+    $gid = $formdata['gid'];
 
     $bus = new Bus(-1, $reg, $make, $model, $capacity, $engineSize, $purchaseDate, $serviceDate, $gid);
 
