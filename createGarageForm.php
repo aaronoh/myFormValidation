@@ -1,15 +1,16 @@
 <?php
 require_once 'loginhelper.php';
 require_once 'validateGarage.php';
-
+//begins session if user is logged in
 start_session();
-
+//if user is not logged in, return to  log in form
 if (!is_logged_in()) {
     header("Location: loginform.php");
 }
 
 $user = $_SESSION['user'];
 
+//function used to set values of the form elements
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
         echo $formdata[$fieldName];
@@ -24,24 +25,21 @@ if (!isset($errors)) {
     $errors = array();
 }
 ?>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
 
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Create Garage</title>
+        <!--javascript script for form validation-->
         <script src="validate.js"></script>
 
     </head>
 
     <body>
+        <!--Links to my google fonts bootstrap/my own style sheets & javascript scripts-->
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
+        <!--php file which generates the html for my header-->
         <?php require 'header.php'; ?>
         <div class="conntainer">
             <h1 class="editheader col-lg-3 col-lg-offset-5">Create Garage Form</h1>

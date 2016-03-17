@@ -1,4 +1,5 @@
 <?php
+
 //used to comunicate with the garages table in the database
 class GarageTableGateway {
 
@@ -40,8 +41,6 @@ class GarageTableGateway {
         return $statement;
     }
 
-  
-    
     public function getGarageByBusId($id) {
         //query to return the full row from the garages table based on the garageID of the bus
         $sqlQuery = "SELECT g.* FROM bus b LEFT JOIN web_garage g ON b.garageID = g.id WHERE b.id = :id";

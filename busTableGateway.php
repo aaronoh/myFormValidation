@@ -1,4 +1,5 @@
 <?php
+
 //used to comunicate with the bus table in the database
 class BusTableGateway {
 

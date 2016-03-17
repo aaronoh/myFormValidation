@@ -7,8 +7,8 @@ window.onload = function () {
         var valid = true;
         //error elements
         var usernameErrorElement = document.getElementById("usernameError");
-        var passwordErrorElement = document.getElementById("passwordError");   
-        var password2ErrorElement = document.getElementById("password2Error"); 
+        var passwordErrorElement = document.getElementById("passwordError");
+        var password2ErrorElement = document.getElementById("password2Error");
 
         //set errrors to empty string
         usernameErrorElement.innerHTML = "";
@@ -18,8 +18,8 @@ window.onload = function () {
 
         //input elements
         var usernameField = document.getElementById('username');
-        var  passwordField = document.getElementById('password');
-        var  password2Field = document.getElementById('password2');
+        var passwordField = document.getElementById('password');
+        var password2Field = document.getElementById('password2');
 
 
         //set variables to value of user input 
@@ -30,7 +30,7 @@ window.onload = function () {
 
         //reg, make, model, capacity,  are required
         if (username === "") {
-           usernameErrorElement.innerHTML = "Please enter a username";
+            usernameErrorElement.innerHTML = "Please enter a username";
             valid = false;
         }
 
@@ -38,12 +38,12 @@ window.onload = function () {
             passwordErrorElement.innerHTML = "Please enter your password";
             valid = false;
         }
-        
+
         if (password2 === "") {
             password2ErrorElement.innerHTML = "Please confirm your password";
             valid = false;
         }
-        
+
         if (password !== password2) {
             password2ErrorElement.innerHTML = "Passwords Do Not Match";
             valid = false;

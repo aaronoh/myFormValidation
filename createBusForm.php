@@ -2,18 +2,18 @@
 require_once 'loginhelper.php';
 require_once'dbconnection.php';
 require_once 'garagesTableGateway.php';
-
-
 require_once 'validateBus.php';
 
+//begins session if user is logged in
 start_session();
-
+//if user is not logged in, return to  log in form
 if (!is_logged_in()) {
     header("Location: loginform.php");
 }
 
 $user = $_SESSION['user'];
 
+//function used to set values of the form elements
 function setValue($formdata, $fieldName) {
     if (isset($formdata) && isset($formdata[$fieldName])) {
         echo $formdata[$fieldName];
@@ -30,7 +30,7 @@ if (!isset($errors)) {
 
 
 $dbconnection = dbconnection::getConnection();
-
+//connect to the garage table through  garageTableGateway using the connection above
 $garageGateway = new garageTableGateway($dbconnection);
 
 $garages = $garageGateway->getGarage();
@@ -41,14 +41,18 @@ $garages = $garageGateway->getGarage();
 
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Create Bus</title>
+        <!--javascript script for form validation-->
         <script src="validateBus.js"></script>
     </head>
 
     <body>
+        <!--Links to my google fonts bootstrap/my own style sheets & javascript scripts-->
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
+        <!--php file which generates the html for my header-->
         <?php require 'header.php'; ?>
+
         <div class="conntainer">
             <h1 class="editheader col-lg-3 col-lg-offset-5">Create Bus Form</h1>
             <div class="col-lg-2 col-lg-offset-5">

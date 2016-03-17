@@ -81,7 +81,7 @@ start_session();
             <!--Close panel-->
             <!--div containing  contact panel sized using bootstrap cols-->
             <div class="contactpanels col-lg-3 col-lg-offset-1">
-               <!--Table containing contact panel-->
+                <!--Table containing contact panel-->
                 <table>
                     <tr>
 
@@ -109,11 +109,11 @@ start_session();
                     <input type="email" class="contactform contactformspcing" placeholder="Email" />
                     <input type="text" class="contactform contactformspcing" placeholder="Subject" />
                 </div>
-                 <!--div containing the right form elements--> 
+                <!--div containing the right form elements--> 
                 <div class="col-lg-6">
                     <textarea   class="contactform textarea"  placeholder="Message"></textarea>
                 </div>
-                  <!--div containing submit button--> 
+                <!--div containing submit button--> 
                 <div class="col-lg-2 col-lg-offset-5 ">
                     <button type="submit"   class="form-btnspcing form-btn">Send Message</button> 
                 </div>

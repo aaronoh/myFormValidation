@@ -19,17 +19,18 @@ if (empty($errors)) {
     $purchaseDate = $formdata['purchaseDate'];
     $serviceDate = $formdata['serviceDate'];
     $gid = $formdata['gid'];
-
+    //make a new bus object with the data above, set id to -1 becasue it is ai in database
     $bus = new Bus(-1, $reg, $make, $model, $capacity, $engineSize, $purchaseDate, $serviceDate, $gid);
-
+    //initialize db connection
     $dbconnection = dbconnection::getConnection();
-
+    //connect to the bus table through  busTableGateway using the connection above
     $gateway = new busTableGateway($dbconnection);
 
     $id = $gateway->insertBus($bus);
-
+    //when completed redirect user to viewall
     header('Location: viewallbuses.php');
 } else {
+    //if an error occurs redisplay the create form
     require 'createBusForm.php';
 }
 ?>

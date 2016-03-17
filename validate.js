@@ -99,8 +99,8 @@ window.onload = function () {
             emailErrorElement.innerHTML = "Please enter a valid email";
             valid = false;
         }
-        
-              if (phone === "") {
+
+        if (phone === "") {
             phoneErrorElement.innerHTML = "Phone number cannot be blank";
             valid = false;
         }

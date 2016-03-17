@@ -155,20 +155,20 @@ if (!isset($errors)) {
                     <div class="form-group">
                         <label for="gid">Garage</label>
                         <select class="form-control" placeholder="Garage"  name="gid" id="gid">"> 
-                             <?php
-                                foreach ($garages as $garage) {
-                                    if ($garage['id'] === $row['gid']) {
-                                        $selected = 'selected';
-                                    } else {
-                                        $selected = '';
-                                    }
-                                    echo '<option value="' . $garage['id'] . '" ' . $selected . '>' . $garage['name'] . '</option>';
+                            <?php
+                            foreach ($garages as $garage) {
+                                if ($garage['id'] === $row['gid']) {
+                                    $selected = 'selected="selected"';
+                                } else {
+                                    $selected = '';
                                 }
-                                ?>
+                                echo '<option value="' . $garage['id'] . '" ' . $selected . '>' . $garage['name'] . '</option>';
+                            }
+                            ?>
                         </select>
                         <div class="error">
                             <span id="gidError">
-                            <?php if (isset($errors['gid'])) echo $errors['gid']; ?>
+                                <?php if (isset($errors['gid'])) echo $errors['gid']; ?>
                             </span>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ window.onload = function () {
         var valid = true;
         //error elements
         var usernameErrorElement = document.getElementById("usernameError");
-        var passwordErrorElement = document.getElementById("passwordError");     
+        var passwordErrorElement = document.getElementById("passwordError");
 
         //set errrors to empty string
         usernameErrorElement.innerHTML = "";
@@ -16,7 +16,7 @@ window.onload = function () {
 
         //input elements
         var usernameField = document.getElementById('username');
-        var  passwordField = document.getElementById('password');
+        var passwordField = document.getElementById('password');
 
 
         //set variables to value of user input 
@@ -26,7 +26,7 @@ window.onload = function () {
 
         //reg, make, model, capacity,  are required
         if (username === "") {
-           usernameErrorElement.innerHTML = "Please enter your username";
+            usernameErrorElement.innerHTML = "Please enter your username";
             valid = false;
         }
 

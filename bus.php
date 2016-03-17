@@ -1,4 +1,5 @@
 <?php
+
 //defining bus object & constructor/ gets&sets
 class Bus {
 
