@@ -16,8 +16,7 @@ function validate(&$formdata, &$errors) {
     $formdata["phone"] = filter_input($input_method, "phone", FILTER_SANITIZE_STRING);
     $formdata["openingdate"] = filter_input($input_method, "openingdate", FILTER_SANITIZE_STRING);
     $formdata["openinghours"] = filter_input($input_method, "openinghours", FILTER_SANITIZE_STRING);
-    $formdata["latenight"] = filter_input($input_method, "latenight", FILTER_SANITIZE_STRING);
-    $formdata["facilities"] = filter_input($input_method, "facilities", FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
+
 
     if ($formdata ['name'] === NULL || $formdata ['name'] === FALSE || $formdata ['name'] === "") {
         $errors['name'] = "Name Required";
@@ -30,7 +29,9 @@ function validate(&$formdata, &$errors) {
         $errors['address'] = "Address Required";
     }
 
-    if ($formdata ['openingdate'] !== NULL && $formdata ['openingdate'] !== FALSE && $formdata ['openingdate'] !== "") {
+    if ($formdata ['openingdate'] === NULL || $formdata ['openingdate'] === FALSE || $formdata ['openingdate'] === "") {
+        $errors['openingdate'] = "Opening Date Required";
+    } else {
         $date_array = explode('-', $formdata['openingdate']);
         if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[2], $date_array[0])) {
             $errors['openingdate'] = "Invalid Date Format: YYYY-MM-DD expected.";
@@ -41,23 +42,6 @@ function validate(&$formdata, &$errors) {
     if ($formdata ['email'] !== NULL && $formdata ['email'] !== FALSE && $formdata ['email'] !== "") {
         if (!filter_var($formdata['email'], FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = "Please enter a valid email address";
-        }
-    }
-
-    if ($formdata ['latenight'] !== NULL && $formdata ['latenight'] !== FALSE && $formdata ['latenight'] !== "") {
-        $validNewsLetter = array("Yes", "No");
-        if (!in_array($formdata['latenight'], $validNewsLetter)) {
-            $errors['latenight'] = "Invalid Answer (Yes/No)";
-        }
-    }
-
-    if ($formdata ['facilities'] !== NULL && $formdata ['facilities'] !== FALSE && $formdata ['facilities'] !== "") {
-        $validPlatforms = array("WiFi", "toilets", "cafeteria");
-        foreach ($formdata['facilities'] as $platform) {
-            if (!in_array($platform, $validPlatforms)) {
-                $errors['facilities'] = "Invalid Facility";
-                break;
-            }
         }
     }
 }
