@@ -14,8 +14,6 @@
         ?>
 
         <div class="jumbotronlogin">
-
-
             <div class="clearfix"></div>
             <div class="loginform">
                 <h1 class = " loginheader col-lg-2 col-lg-offset-5">Pilot Tours</h1>

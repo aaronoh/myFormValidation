@@ -56,8 +56,7 @@ try {
     header('Location: index.php');
 } catch (Exception $ex) {
     // if exception occurs then extract message
-    // and send the user the
-    //login form
+    // and redirect user to login form
     $errorMessage = $ex->getMessage();
     require 'loginform.php';
 }
