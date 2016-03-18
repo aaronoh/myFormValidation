@@ -33,7 +33,7 @@ h1{
 .form-group {
     position: relative;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
 }
 .input-group {
     position: relative;
@@ -44,7 +44,6 @@ h1{
     width: 100%; 
     border: none;
     border-radius: 0 !important;
-
     font-size: 16px;
     font-weight: 300;
     padding: 0;
@@ -78,22 +77,6 @@ label {
     -webkit-transition: 0.2s ease all;
 }
 
-/* help-block */
-.form-group .help-block {
-    position: absolute;
-}
-
-.help-block {
-    color: #bdbdbd; 
-    font-size: 12px;
-    font-weight: 300;
-}
-
-
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-    background-color: transparent;
-    border-bottom-style: dashed;
-}
 
 .navbar{
     border-radius: 0px;

@@ -4,9 +4,17 @@ require_once 'garage.php';
 require_once 'garagesTableGateway.php';
 require_once 'dbconnection.php';
 require_once 'validateGarage.php';
+require_once 'loginhelper.php';
 
 $formdata = array();
 $errors = array();
+
+start_session();
+//if user is not logged in redirect them to the log in form 
+if (!is_logged_in()) {
+    header("Location: login_form.php");
+}
+
 //validate the data entered using the validate function in the validateBus.php file
 validate($formdata, $errors);
 //if the validation is passed (errors array empty) set each variable to the valuye of the coresponding variable in the formdata array

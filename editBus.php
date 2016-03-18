@@ -7,7 +7,7 @@ require_once 'dbconnection.php';
 require_once 'validateBus.php';
 
 start_session();
-
+//if user is not logged in redirect them to the log in form 
 if (!is_logged_in()) {
     header("Location: login_form.php");
 }
@@ -15,8 +15,9 @@ if (!is_logged_in()) {
 $formdata = array();
 $errors = array();
 
-
+//validate the data entered using the validate function in the validateBus.php file
 validate($formdata, $errors);
+//if the validation is passed (errors array empty) set each variable to the valuye of the coresponding variable in the formdata array
 if (empty($errors)) {
     $id = $_POST['id'];
     $reg = $formdata['reg'];
@@ -27,19 +28,20 @@ if (empty($errors)) {
     $purchaseDate = $formdata['purchaseDate'];
     $serviceDate = $formdata['serviceDate'];
     $gid = $formdata['gid'];
-
+    //make a new bus object with the data above, set id to -1 becasue it is ai in database
     $bus = new Bus($id, $reg, $make, $model, $capacity, $engineSize, $purchaseDate, $serviceDate, $gid);
-
+    //initialize db connection
     $dbconnection = dbconnection::getConnection();
-
+    //connect to the bus table through  busTableGateway using the connection above
     $gateway = new busTableGateway($dbconnection);
-
+//execute the update function in the bustablegateway using the object created above
     $id = $gateway->updateBus($bus);
 
 
-
+//when completed redirect user to viewall
     header('Location: viewallbuses.php');
 } else {
+    //if an error occurs redisplay the edit form
     require 'editBusForm.php';
 }
 ?>

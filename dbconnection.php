@@ -6,7 +6,7 @@ class dbconnection {
 
     public static function getConnection() {
         if (dbconnection::$dbconnection === NULL) {
-            // connect to the database
+            // database access credentials stored in variables 
             $host = "localhost";
             $database = "n00143888playground";
 //            $username = "N00143888";
