@@ -1,5 +1,10 @@
 window.onload = function () {
 
+//function to check date format
+    function isValidDateFormat(date) {
+        var re = /^\d{4}\-\d{2}\-\d{2}$/;
+        return re.test(date);
+    }
 
     var submitBtn = document.getElementById('submit');
 
@@ -45,7 +50,7 @@ window.onload = function () {
         var serviceDate = serviceDateField.value;
         var gid = gidField.value;
 
-        //reg, make, model, capacity,  are required
+        //reg, make, model, capacity gid, purchase date, service date are required
         if (reg === "") {
             regErrorElement.innerHTML = "Reg cannot be blank";
             valid = false;
@@ -72,7 +77,7 @@ window.onload = function () {
             gidErrorElement.innerHTML = "Garage ID cannot be blank";
             valid = false;
         }
-
+        //if its not blank it must be the right format & a real date
         if (purchaseDate === "") {
             purchaseDateErrorElement.innerHTML = "Purchase Date cannot be blank";
             valid = false;
@@ -81,8 +86,12 @@ window.onload = function () {
             valid = false;
         }
 
+         //if its not blank it must be the right format & a real date
         if (serviceDate === "") {
             serviceDateErrorElement.innerHTML = "Service Date cannot be blank";
+            valid = false;
+        } else if (serviceDate !== isValidDateFormat(serviceDate)) {
+            serviceDateErrorElement.innerHTML = "Invalid Date Format: YYYY-MM-DD expected.";
             valid = false;
         }
 

@@ -1,10 +1,10 @@
 window.onload = function () {
-
+//function to check date format
     function isValidDateFormat(date) {
         var re = /^\d{4}\-\d{2}\-\d{2}$/;
         return re.test(date);
     }
-
+//function to check the date is a real date 
     function isDate(date) {
         var parts = date.split("-");
         var day = parseInt(parts[2], 10);
@@ -22,7 +22,7 @@ window.onload = function () {
                 day >= 1 && day <= monthLength[month - 1]);
 
     }
-
+//function to validate email through regular expression
     function validateEmail(email) {
         var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
@@ -71,7 +71,7 @@ window.onload = function () {
         var openingdate = openingdateField.value;
 
 
-        //name, manager name and address are required
+        //name, manager name, phone and address are required
         if (name === "") {
             nameErrorElement.innerHTML = "Name cannot be blank";
             valid = false;
@@ -86,7 +86,7 @@ window.onload = function () {
             addressErrorElement.innerHTML = "Address cannot be blank";
             valid = false;
         }
-
+        //if its not blank it must be the right format & a real date
         if (openingdate !== "" && !isValidDateFormat(openingdate)) {
             openingdateErrorElement.innerHTML = "Opening date must be in the format YYYY-MM-DD";
             valid = false;

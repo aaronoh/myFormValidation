@@ -28,7 +28,7 @@ window.onload = function () {
         var password2 = password2Field.value;
 
 
-        //reg, make, model, capacity,  are required
+         //username password and password confirmtaion are required
         if (username === "") {
             usernameErrorElement.innerHTML = "Please enter a username";
             valid = false;
