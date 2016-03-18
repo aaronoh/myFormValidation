@@ -66,25 +66,14 @@ try {
     // since the username is not aleady registered, create
     // a new User object, add it to the database using the
     // UserTable object, and store it in the session array
-    // using the key 'user'
     $user = new User(null, $username, $password, "user");
     $id = $userTable->insert($user);
     $user->setId($id);
     $_SESSION['user'] = $user;
-
-    // now the user is registered and logged in so redirect
-    // them the their home page
-    // Note the user is redirected to home.php rather than
-    // requiring the home.php script at this point - this 
-    // ensures that if the user refreshes the home page they
-    // will not be resubmitting the login form.
-    // 
-    // require 'home.php';
+    //once logged in redirect to home
     header('Location: index.php');
 } catch (Exception $ex) {
-    // if an exception occurs then extract the message
-    // from the exception and send the user the
-    // registration form
+    // if an exception occurs then extract message, redisplay registration form
     $errorMessage = $ex->getMessage();
     require 'registerform.php';
 }

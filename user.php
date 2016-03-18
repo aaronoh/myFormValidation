@@ -1,5 +1,5 @@
 <?php
-
+//defining user object & constructor/ gets&sets
 class User {
 
     private $id;
