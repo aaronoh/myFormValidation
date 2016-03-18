@@ -5,7 +5,7 @@ require_once 'dbconnection.php';
 require_once 'busTableGateway.php';
 
 start_session();
-
+//if user is not logged in, return to  log in form
 if (!is_logged_in()) {
     header("Location: loginform.php");
 }
@@ -24,15 +24,20 @@ $statement = $gateway->getBus();
         <meta charset="UTF-8">
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--javascript script for delete confirmation-->
         <script src="deleteConfirm.js"></script>
     </head>
     <body>
+        <!--Links to my google fonts bootstrap/my own style sheets & javascript scripts-->
         <?php require 'utils/styles.php'; ?>
         <?php require 'utils/scripts.php'; ?>
         <?php require 'header.php'; ?>
+        <!--bootstrap container-->
         <div class="container">
             <div class="col-lg-12">
+
                 <h1 class="gsheader col-lg-3 col-lg-offset-5">Our Buses</h1>
+                <!--table headings including add button-->
                 <table class ="table">
                     <thead>
                         <tr>
@@ -50,9 +55,8 @@ $statement = $gateway->getBus();
                         </tr>
                         <?php
                         $row = $statement->fetch(PDO::FETCH_ASSOC);
+                        //echo out table data using each element of the bus object, while there are buses in the db
                         while ($row) {
-
-
                             echo '<td>' . $row['reg'] . '</td>';
                             echo '<td>' . $row['make'] . '</td>';
                             echo '<td>' . $row['model'] . '</td>';
@@ -62,6 +66,7 @@ $statement = $gateway->getBus();
                             echo '<td>' . $row['serviceDate'] . '</td>';
 
                             echo '<td>' . $row['name'] . '</td>';
+                            //view/edit/delete image links
                             echo '<td>'
                             . '<a href="viewBuses.php?id=' . $row['id'] . '"><img src ="imgs/view.png"></a>'
                             . '</td>';
@@ -82,6 +87,6 @@ $statement = $gateway->getBus();
 
             </div>
         </div>
-        <?php require 'footer.php'; ?>
+        <?php require 'footer.php'; ?> <!--php file that generates the html code for my footer!-->
     </body>
 </html>

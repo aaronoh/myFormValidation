@@ -8,7 +8,7 @@ function echoValue($array, $fieldName) {
 
 function validate(&$formdata, &$errors) {
     $input_method = INPUT_POST;
-
+//    insure each form element only contains the right data type 
     $formdata["name"] = filter_input($input_method, "name", FILTER_SANITIZE_STRING);
     $formdata["managername"] = filter_input($input_method, "managername", FILTER_SANITIZE_STRING);
     $formdata["address"] = filter_input($input_method, "address", FILTER_SANITIZE_STRING);
@@ -17,7 +17,7 @@ function validate(&$formdata, &$errors) {
     $formdata["openingdate"] = filter_input($input_method, "openingdate", FILTER_SANITIZE_STRING);
     $formdata["openinghours"] = filter_input($input_method, "openinghours", FILTER_SANITIZE_STRING);
 
-
+ //if no data entered display error
     if ($formdata ['name'] === NULL || $formdata ['name'] === FALSE || $formdata ['name'] === "") {
         $errors['name'] = "Name Required";
     }
@@ -32,7 +32,9 @@ function validate(&$formdata, &$errors) {
     if ($formdata ['openingdate'] === NULL || $formdata ['openingdate'] === FALSE || $formdata ['openingdate'] === "") {
         $errors['openingdate'] = "Opening Date Required";
     } else {
+          //split the date into 3 arrays based on the - divider
         $date_array = explode('-', $formdata['openingdate']);
+         //when split if there are not 3 arrays set error
         if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[2], $date_array[0])) {
             $errors['openingdate'] = "Invalid Date Format: YYYY-MM-DD expected.";
             print_r($date_array);

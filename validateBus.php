@@ -8,7 +8,7 @@ function echoValue($array, $fieldName) {
 
 function validate(&$formdata, &$errors) {
     $input_method = INPUT_POST;
-
+//    insure each form element only contains the right data type 
     $formdata["reg"] = filter_input($input_method, "reg", FILTER_SANITIZE_STRING);
     $formdata["make"] = filter_input($input_method, "make", FILTER_SANITIZE_STRING);
     $formdata["model"] = filter_input($input_method, "model", FILTER_SANITIZE_STRING);
@@ -18,7 +18,8 @@ function validate(&$formdata, &$errors) {
     $formdata["openinghours"] = filter_input($input_method, "openinghours", FILTER_SANITIZE_STRING);
     $formdata["serviceDate"] = filter_input($input_method, "serviceDate", FILTER_SANITIZE_STRING);
     $formdata["gid"] = filter_input($input_method, "gid", FILTER_SANITIZE_NUMBER_INT);
-
+    
+    //if no data entered display error
     if ($formdata ['reg'] === NULL || $formdata ['reg'] === FALSE || $formdata ['reg'] === "") {
         $errors['reg'] = "Reg Required";
     }
@@ -37,7 +38,9 @@ function validate(&$formdata, &$errors) {
     if ($formdata ['purchaseDate'] === NULL || $formdata ['purchaseDate'] === FALSE || $formdata ['purchaseDate'] === "") {
         $errors['purchaseDate'] = "Purchase Date Required";
     } else {
+        //split the date into 3 arrays based on the - divider
         $date_array = explode('-', $formdata['purchaseDate']);
+        //when split if there are not 3 arrays set error
         if (count($date_array) !== 3 || !checkdate($date_array[1], $date_array[2], $date_array[0])) {
             $errors['purchaseDate'] = "Invalid Date Format: YYYY-MM-DD expected.";
             print_r($date_array);

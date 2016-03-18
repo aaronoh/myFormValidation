@@ -7,6 +7,7 @@ require_once 'loginhelper.php';
 require_once 'garagesTableGateway.php';
 start_session();
 
+//if user is not logged in, return to  log in form
 if (!is_logged_in()) {
     header("Location: loginform.php");
 }
